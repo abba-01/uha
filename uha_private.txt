@@ -1,0 +1,90 @@
+UHA Universal Horizon Address
+
+1) Purpose & Object
+A UHA encodes a point in the observable universe in a way that is (i) frame-agnostic, (ii) reproducible under any ΛCDM prior, (iii) self-decoding without natural language, and (iv) optionally extensible to a deterministic local set of directions. The address is both a physical anchor and a portable record.
+
+2) Cosmological Framework
+Let a∈(0,1] denote the scale factor and H(a) the Hubble rate under a flat ΛCDM prior:
+H(a)=H0​Ωr​a−4+Ωm​a−3+ΩΛ​​. 
+Cosmic time since the Big Bang (anchor):
+T(a)=∫0a​a′H(a′)da′​. 
+Comoving particle horizon radius at a:
+RH​(a)=c∫0a​a′2H(a′)da′​. 
+
+3) Normalized Spatial Coordinates & 3D→1D Code
+Map spherical coordinates (r,θ,ϕ) into [0,1)3:
+s1​=RH​(a)r​,s2​=21−cosθ​,s3​=2πϕ​. 
+Discretize each si​ to N bits and interleave via a space-filling curve. With Morton (Z-order):
+    • Integer index I∈{0,…,23N−1}.
+    • Canonical fraction
+ξ=23NI+21​​∈(0,1). 
+Define a time-like offset tied to the horizon scale:
+Δt=cRH​(a)​ξ. 
+Cosmology-invariance recommendation: treat (a,ξ) as canonical; compute Δt at decode time under any chosen cosmology. Store a cosmology fingerprint (CosmoID) to reproduce the original numerics exactly.
+
+4) The Address Tuple
+A complete UHA minimally encodes
+A=(a,ξ,u^,CosmoID;anchors)​ 
+where:
+    • a (dimensionless), ξ (dimensionless) are canonical.
+    • u^∈R3 is a unit direction vector (primary sightline).
+    • CosmoID fingerprints the encode-time prior (e.g., H0​,Ωm​,Ωr​,ΩΛ​ as rationals + a short hash).
+    • Anchors provide universal unit calibration: speed of light c and the 21 cm neutral-hydrogen hyperfine frequency f21​ (see §6).
+Decoding (any ΛCDM prior):
+    1. From anchors, set time and length units (no Earth conventions needed).
+    2. Evaluate RH​(a) for the chosen prior (or re-use stored CosmoID).
+    3. Recover r=ξRH​(a). Combine with u^ to get the comoving position x=ru^.
+
+5) Multi-Vector Extension (UHA-MV)
+Embed a deterministic Directional Expansion so one record yields a fixed local neighborhood of directions.
+    1. Construct an orthonormal basis {u^,e^1​,e^2​} at the primary ray via a fixed Gram–Schmidt seed (fully specified; no language).
+    2. Define an expansion operator (example: 16-ray “star”):
+D(u^;Δθ,Δϕ,M)={u^0​=u^}∪{Re^1​​(±Δθ)u^,Re^2​​(±Δθ)u^,Re^1​±e^2​​(Δϕ)u^,…}M−1​, 
+with a fixed rotation order to guarantee reproducibility.
+3. Store DirExpand = (AlgoID, Δθ, Δϕ, M). Any decoder reconstructs the same companion rays.
+This yields a compact local field-of-view fingerprint from one canonical address.
+
+6) Unit Calibration via Physics (Language-Free)
+To be self-decoding, the record embeds physical constants as numbers with unit tags:
+    • Speed of light c with SI exponents [0,1,−1,0,0,0,0] (m·s−1).
+    • Hydrogen 21 cm frequency f21​≈1.42040575177×109 s−1 with tag [0,0,−1,0,0,0,0].
+From these:
+ unit unittime unit=f21−1​,length unit=c/f21​. 
+All T(a),Δt are interpretable in f21−1​; all RH​(a),r in c/f21​. No Earth-specific meter/second needed.
+Optionally include CMB dipole d^ and a secondary cosmic axis q^​ to define a universal triad for expressing u^ (helps cross-observer alignment).
+7) Self-Decoding Binary Record
+
+7.1 Framing & Integrity
+    • Sync (e.g., 0xAA55AA55), 32-bit length.
+    • Sequence of TLVs (Type–Length–Value), each followed by CRC-16 over its Value.
+    • Final CRC-32 over all TLVs. A naive parser can segment and verify without any dictionary.
+7.2 Numbers & Units
+    • Rationals (numerator/denominator as signed integers) to avoid IEEE assumptions.
+    • Unit tags: 7 signed 5–8-bit exponents for [kg,m,s,A,K,mol,cd]. This makes dimensionality machine-discoverable.
+7.3 Canonical TLVs (minimal set)
+    • T=1: Version.
+    • T=10: c (units + rational).
+    • T=11: f21​ (units + rational).
+    • T=20: a (dimensionless rational).
+    • T=21: ξ (dimensionless rational).
+    • T=30: u^ as 3 rationals (dimensionless), normalized.
+    • T=40: CosmoID (either parameters as rationals or a 128-bit hash over a canonicalized block).
+    • T=50: DirExpand (AlgoID, Δθ, Δϕ, M) [optional for UHA-MV].
+Best practice: treat (a,ξ) as canonical; Δt is derived at decode time. If included, mark it “derived under CosmoID”.
+
+8) Mathematical & Practical Properties
+    • Invariance: (a,ξ) is cosmology-portable; only RH​(a) changes with priors. Storing CosmoID ensures bit-exact reproducibility.
+    • Precision & error: With N bits per axis (Morton), quantization error follows half-cell bounds; locality recall is Morton-class (can substitute Hilbert if higher spatial locality is needed).
+    • Integrity: Record-level CRC-32 plus per-field CRC-16 detects corruption without external systems.
+    • Extensibility: Additional TLVs (e.g., precomputed RH​(a), encode epoch, provenance hash) are naturally forward-compatible.
+
+9) Minimal Decode Algorithm (Receiver-Agnostic)
+    1. Frame & verify (sync, length, per-TLV CRC-16, footer CRC-32).
+    2. Parse constants c,f21​ → set time/length units.
+    3. Read a,ξ,u^ (and optional CosmoID, DirExpand).
+    4. Choose cosmology: either apply CosmoID or receiver’s prior to compute RH​(a).
+    5. Recover position: r=ξRH​(a), x=ru^.
+    6. If UHA-MV: materialize D to obtain M companion directions.
+
+10) One-Paragraph Abstract
+We introduce the Universal Horizon Address (UHA), a self-decoding, cosmology-portable coordinate for the observable universe. UHA encodes a scale factor a and a horizon-normalized 1D index ξ (from a 3D space-filling code), together with a unit direction u^. Physical constants c and the 21 cm hydrogen frequency f21​ are embedded with unit tags, enabling receivers with no linguistic priors to calibrate time and length directly from physics. A cosmology fingerprint (CosmoID) provides bit-exact reproducibility of RH​(a), while leaving (a,ξ) canonical across priors. An optional multi-vector extension (UHA-MV) specifies a deterministic directional expansion so one record yields a reproducible local set of sightlines. The binary format uses TLVs with per-field CRC-16 and a footer CRC-32 for robust, dictionary-free parsing.
