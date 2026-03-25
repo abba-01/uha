@@ -60,5 +60,29 @@ The coordinate system's cosmology-portable invariant (ξ = horizon-normalized po
 | Universal Horizon Address theory (Martin 2025) | 10.5281/zenodo.17435574 |
 | Hubble tension resolution validation package | 10.5281/zenodo.17435578 |
 
-**Reproduction code:** `papers/gaia_zero_bias_test.py`, `papers/cepheid_xi_test.py`
+**Reproduction code:**
+- `papers/gaia_zero_bias_test.py` — Gaia zero-bias parallax test (mean |Δξ| ≈ 0)
+- `papers/cepheid_xi_test.py` — Cepheid ξ normalization (Pantheon+/SH0ES)
+- `papers/jwst_xi_test.py` — JWST Cepheid hosts ξ test (Riess 2023, 8 hosts)
+- `papers/bao_xi_test.py` — DESI DR1 BAO tension (physical Ω_m residual confirmed)
+- `papers/s8_sigma8_xi_test.py` — S8/σ₈ tension (physical, ~2-3σ, Ω_m driven)
+- `papers/age_tension_xi_test.py` — Age of universe tension (dissolves at H₀≈69-70)
+- `papers/al_lensing_xi_test.py` — A_L lensing amplitude tension (12–24% coordinate + statistical)
+
 **Patent:** US 63/902,536
+
+---
+
+## Cosmological Tension Test Results (Session ecda5f02)
+
+All five major cosmological tensions tested via ξ normalization. Results as of 2026-03-24:
+
+| Tension | H₀ frame component | Physical residual | Key finding |
+|---------|-------------------|-------------------|-------------|
+| **H₀ (Hubble)** | ~93% artifact | ~7% real (Ω_m) | ξ cancels on Pantheon+/JWST; stars alone → H₀≈68.7 |
+| **BAO (DESI DR1)** | ~0% | 100% real | D_M/r_s invariant to H₀; DESI Ω_m=0.295 vs Planck 0.315 |
+| **S8 / σ₈** | ~0–3% | ~97% real | Both surveys use H₀≈67.4 — genuine Ω_m/σ₈ discrepancy |
+| **Age of universe** | Large (SH0ES → 12.5 Gyr) | Small at H₀≈70 | 4/7 GCs exceed SH0ES age; dissolves at H₀≈69-70 |
+| **A_L lensing** | 12–24% minor | Mostly statistical | ACT A_L=1.01 (same sky, no anomaly) — weakest tension |
+
+**Convergent signal:** All late-universe probes point to Ω_m ≈ 0.295 vs Planck 0.315 (~6%). This is the genuine physical residual after ξ removes the frame-mixing artifact from the H₀ tension.
