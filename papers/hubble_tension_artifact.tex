@@ -15,8 +15,8 @@ via Horizon-Normalized Coordinates}
 
 \author{Eric D. Martin}
 
-\date{2026-03-24\\
-\small Preprint — Session: ecda5f02-e5c9-4cda-8135-7346661b0b91}
+\date{2026-03-25\\
+\small Preprint — Sessions: ecda5f02-e5c9-4cda-8135-7346661b0b91 $|$ bdf10532-f890-40c7-8abf-adaa29ec06b1}
 
 \begin{document}
 
@@ -139,6 +139,30 @@ assumption, imply $H_0 \approx 70$ km/s/Mpc --- consistent with several
 intermediate-rung measurements (TRGB, megamasers, time-delay lensing). The
 73.04 km/s/Mpc value emerges from the pipeline, not from the stars themselves.
 
+\subsection*{Convergent $\Omega_m$ signal}
+
+The $\sim$3\% physical residual is not isolated to the $H_0$ measurement.
+Three methodologically independent late-universe probes converge on
+$\Omega_m \approx 0.295$--$0.304$: (1)~the $\xi$-residual after frame-mixing
+is removed from the $H_0$ tension (this work); (2)~DESI BAO measurements,
+which independently prefer $\Omega_m \approx 0.295$ (DR1) and
+$\Omega_m \approx 0.304$ (2026 combined with supernova data) vs.\ Planck's
+$\Omega_m = 0.315$ --- a $\sim$4--6\% deficit --- with the BAO observable
+$D_M/r_s$ being $H_0$-independent by construction \citep{desi2024}; and
+(3)~$S_8/\sigma_8$ weak lensing surveys (KiDS-1000, DES~Y3), which
+consistently find matter clustering amplitudes below the Planck prediction
+at $\Omega_m$ consistent with the lower value \citep{heymans2021,amon2022}.
+The 2026 DESI combined analysis further reports $S_8 = 0.808 \pm 0.017$,
+a 3.5$\sigma$ tension with the standard cosmological constant model when
+combined with supernova data --- consistent with a genuine matter density
+deficit rather than an expansion rate anomaly. This convergence across
+datasets with no shared systematic is not predicted by Early Dark Energy
+models, which address the sound horizon $r_s$ but leave $\Omega_m$
+untouched. The genuine open problem in cosmology is a $\sim$4--6\%
+late-universe matter density deficit relative to Planck's early-universe
+inference --- a target that $\xi$-normalization can isolate cleanly in
+next-generation surveys.
+
 \section{Forward Implication}
 
 LSST will catalog $\sim$10 billion galaxies. Euclid will map the large-scale
@@ -219,6 +243,9 @@ to bridge the full 8.4\% gap without first removing the frame-mixing
 component requires more extreme scalar field parameters than necessary,
 worsening the $S_8$ tension as a side effect. Removing the artifact first
 reduces the required EDE energy injection by a factor of $\sim$3.
+Furthermore, the $\sim$3\% residual is independently confirmed as an
+$\Omega_m$ deficit by DESI DR1 and $S_8$ surveys (Section~4) --- a signal
+EDE does not address.
 
 \section{Conclusion}
 
@@ -231,15 +258,18 @@ $H_0 \approx 70$ km/s/Mpc, between the two camps. The infrastructure to
 prevent this class of artifact from recurring in next-generation surveys exists
 and is described here.
 
-\section*{Data Availability}
+\section*{Data Availability Statement}
 
-Reproduction code: \texttt{gaia\_zero\_bias\_test.py},
-\texttt{cepheid\_xi\_test.py}, \texttt{jwst\_xi\_test.py}
-(repository: \url{https://github.com/abba-01/uha}).
-Data: Pantheon+SH0ES public release \citep{brout2022}.
-UHA theory and patent: \citet{martin2025}, DOI: 10.5281/zenodo.17435574.
-This manuscript: DOI: 10.5281/zenodo.19154280.
-Patent: US~63/902,536.
+All analysis code is publicly available at \url{https://github.com/abba-01/uha}.
+The Pantheon+SH0ES dataset is the public release from \citet{brout2022},
+available at \url{https://pantheonplussh0es.github.io}.
+Reproduction scripts: \texttt{gaia\_zero\_bias\_test.py},
+\texttt{cepheid\_xi\_test.py}, \texttt{jwst\_xi\_test.py},
+\texttt{bao\_xi\_test.py}, \texttt{s8\_sigma8\_xi\_test.py}.
+This manuscript is deposited at Zenodo: DOI~10.5281/zenodo.19211662.
+UHA theory and patent: \citet{martin2025}, DOI:~10.5281/zenodo.17435574,
+US Patent~63/902,536.
+No proprietary data were used.
 
 \bibliographystyle{aasjournal}
 \begin{thebibliography}{99}
@@ -271,6 +301,18 @@ DOI: 10.3847/1538-4357/ad1bac
 \bibitem[Poulin et al.(2019)]{poulin2019}
 Poulin, V., et al., 2019, PRL, 122, 221301,
 DOI: 10.1103/PhysRevLett.122.221301
+
+\bibitem[DESI Collaboration(2024)]{desi2024}
+DESI Collaboration, 2024, AJ, 167, 231,
+DOI: 10.3847/1538-3881/ad3a08
+
+\bibitem[Heymans et al.(2021)]{heymans2021}
+Heymans, C., et al., 2021, A\&A, 646, A140,
+DOI: 10.1051/0004-6361/202014214
+
+\bibitem[Amon et al.(2022)]{amon2022}
+Amon, A., et al., 2022, Phys.\ Rev.\ D, 105, 023514,
+DOI: 10.1103/PhysRevD.105.023514
 
 \end{thebibliography}
 

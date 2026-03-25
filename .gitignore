@@ -1,2 +1,11 @@
 DataRelease-main/
 *.zip
+research/
+# LaTeX build artifacts
+papers/*.aux
+papers/*.bbl
+papers/*.blg
+papers/*.log
+papers/*.out
+papers/*.fls
+papers/*.fdb_latexmk
