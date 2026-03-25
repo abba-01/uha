@@ -56,7 +56,9 @@ The coordinate system's cosmology-portable invariant (ξ = horizon-normalized po
 
 | Paper | DOI |
 |-------|-----|
-| Hubble Tension as Measurement Artifact (Martin 2026) | 10.5281/zenodo.19154280 |
+| Hubble Tension as Measurement Artifact v2 (Martin 2026) | 10.5281/zenodo.19211662 |
+| Hubble Tension as Measurement Artifact (concept DOI) | 10.5281/zenodo.19154280 |
+| hubble-91pct-concordance v1.2.0 (UHA restored) | 10.5281/zenodo.19216432 |
 | Universal Horizon Address theory (Martin 2025) | 10.5281/zenodo.17435574 |
 | Hubble tension resolution validation package | 10.5281/zenodo.17435578 |
 
