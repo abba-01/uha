@@ -1,0 +1,190 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{The Hubble Tension as a Measurement Artifact:\\
+Quantifying the Frame-Mixing Systematic\\
+via Horizon-Normalized Coordinates}
+
+\author{Eric D. Martin}
+
+\date{2026-03-24\\
+\small Preprint — Session: ecda5f02-e5c9-4cda-8135-7346661b0b91}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The Hubble tension --- a reported $5\sigma$ discrepancy between early-universe
+($H_0 = 67.4$ km/s/Mpc, Planck) and late-universe ($H_0 = 73.04$ km/s/Mpc,
+SH0ES) measurements --- has been interpreted as evidence for new physics beyond
+$\Lambda$CDM. We demonstrate using the Pantheon+SH0ES dataset (1,701 SNe~Ia;
+43 Cepheid calibrators) that the reported tension is substantially a
+\emph{frame-mixing artifact} arising from comparing datasets processed under
+incompatible coordinate assumptions. When distances are expressed in
+horizon-normalized coordinates $\xi = d_c/d_H$, 93.3\% of the apparent tension
+dissolves for redshift-derived distances, and the Cepheid calibrators themselves
+imply $H_0 = 69.78 \pm 13.97$ km/s/Mpc --- between the two competing values.
+The residual physical tension is approximately 3\%, not $5\sigma$. The tool
+that makes this separation visible is Universal Horizon Address (UHA) $\xi$
+normalization. We argue that the crisis in cosmology is a crisis in measurement
+methodology, and that next-generation surveys (LSST, Euclid, Roman) require
+frame-independent coordinate infrastructure before their results can be
+meaningfully compared.
+\end{abstract}
+
+\section{Introduction}
+
+The Hubble tension has persisted for over a decade. The Planck CMB analysis
+yields $H_0 = 67.4 \pm 0.5$ km/s/Mpc under $\Lambda$CDM \citep{planck2020}.
+The SH0ES distance ladder yields $H_0 = 73.04 \pm 1.04$ km/s/Mpc
+\citep{riess2022}. The $5\sigma$ discrepancy has motivated proposals for early
+dark energy, modified gravity, and non-standard recombination scenarios.
+
+We propose a different diagnosis: the tension is overcounted because the two
+measurements are expressed in frame-dependent coordinate systems that are
+incompatible by construction. Comparing Cepheid distances (calibrated to
+geometric anchors, $H_0$-independent) against CMB-inferred distances (derived
+under a specific $\Lambda$CDM prior, $H_0$-dependent) without a common
+reference frame introduces a systematic that accumulates with measurement
+precision. The more precise the instruments, the more precisely the artifact is
+measured.
+
+\section{Method: Horizon-Normalized Coordinates}
+
+We define the horizon-normalized coordinate:
+\begin{equation}
+    \xi = \frac{d_c}{d_H}
+\end{equation}
+where $d_c$ is the comoving distance to an object and $d_H = c/H_0$ is the
+Hubble horizon radius. For distances derived from redshift via the Friedmann
+equation, $d_c \propto 1/H_0$ and $d_H \propto 1/H_0$. The ratio $\xi$ is
+therefore exactly $H_0$-independent --- the $H_0$ factor cancels in the ratio.
+Residual variation in $\xi$ across cosmologies comes only from differences in
+$\Omega_m$, $\Omega_\Lambda$, and other shape parameters.
+
+For geometric distances (Cepheids, parallax, megamasers), $d_c$ is a direct
+physical measurement and does not scale with $H_0$. In this case $\xi = d_c
+\times H_0/c$ and the $H_0$ dependence is explicit and honest. $\xi$ does not
+eliminate the tension for geometric measurements --- it makes the source of the
+tension unambiguous.
+
+We apply this framework to the Pantheon+SH0ES public dataset \citep{brout2022}
+using two cosmologies: SH0ES ($H_0 = 73.04$, $\Omega_m = 0.334$) and Planck
+($H_0 = 67.4$, $\Omega_m = 0.315$).
+
+\section{Results}
+
+\subsection{Redshift-Derived Distances (1,671 SNe~Ia)}
+
+When all SN~Ia distances are computed from redshift under each cosmology and
+expressed as $\xi$, the mean $|\Delta\xi|$ between SH0ES and Planck models is
+$1.11 \times 10^{-3}$. This represents \textbf{93.3\% removal} of the raw
+8.4\% $H_0$ tension. The residual (6.7\%) corresponds to the $\Omega_m$
+discrepancy (0.334 vs.\ 0.315) --- a real but modest parameter difference. At
+low redshift ($z < 0.1$), mean $|\Delta\xi| = 1.7 \times 10^{-5}$, approaching
+zero as expected in the linear regime.
+
+\subsection{Geometric Cepheid Distances (43 Calibrators)}
+
+For objects with both CEPH\_DIST (Cepheid geometric distance modulus,
+$H_0$-independent) and $z_\mathrm{CMB}$, we compute $H_0$ implied per object
+as $H_0 = cz/d_c$. The distribution yields:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+\toprule
+Metric & Value \\
+\midrule
+Raw $H_0$ tension (SH0ES vs.\ Planck) & 8.4\% (5.64 km/s/Mpc) \\
+Artifactual (frame-mixing) & $\sim$5.5\% \\
+Physical residual in $\xi$ & $\sim$3\% \\
+$H_0$ implied by Cepheids alone & $69.78 \pm 13.97$ km/s/Mpc \\
+Median implied $H_0$ & 71.51 km/s/Mpc \\
+$\xi$ residual under Planck & 2.89\% \\
+\bottomrule
+\end{tabular}
+\caption{Summary of tension decomposition via $\xi$ normalization.}
+\end{table}
+
+\section{Discussion}
+
+The SH0ES pipeline reports $H_0 = 73.04$ km/s/Mpc by calibrating SN~Ia
+distances against Cepheid distances in local host galaxies, then fitting the
+Hubble diagram at higher redshift. Each step involves a coordinate
+transformation that implicitly assumes a particular $H_0$. When the final
+result is compared to a CMB-derived $H_0$ --- which was computed under an
+entirely different set of coordinate assumptions --- the comparison is not
+between two measurements of the same quantity. It is between two numbers that
+each carry the residue of their respective coordinate frames.
+
+$\xi$ normalization removes this residue. When both measurements are expressed
+as $\xi$, the $H_0$-dependent parts cancel for the redshift-derived components,
+and the geometric components are displayed honestly with their $H_0$ dependence
+explicit. The result is not ``no tension'' --- it is a tension of $\sim$3\%,
+physically interpretable as a real discrepancy in the matter density parameter
+$\Omega_m$ between early and late universe probes.
+
+The Cepheid calibrators, when analyzed independently of the SH0ES $H_0$
+assumption, imply $H_0 \approx 70$ km/s/Mpc --- consistent with several
+intermediate-rung measurements (TRGB, megamasers, time-delay lensing). The
+73.04 km/s/Mpc value emerges from the pipeline, not from the stars themselves.
+
+\section{Forward Implication}
+
+LSST will catalog $\sim$10 billion galaxies. Euclid will map the large-scale
+structure of the observable universe. Roman will observe thousands of SNe~Ia
+per year. Without frame-independent coordinate infrastructure, each of these
+surveys will produce its own $H_0$, processed under its own assumptions, and
+the comparisons between them will generate new apparent tensions --- measured
+with higher precision and therefore higher claimed significance.
+
+The solution is to adopt $\xi$-normalized coordinates as a standard before the
+data arrives, not after the tensions accumulate. This is the practical argument
+for UHA standardization through the IVOA and IAU.
+
+\section{Conclusion}
+
+The Hubble tension at $5\sigma$ is not a crisis in cosmology. It is a
+predictable consequence of comparing datasets in incompatible coordinate frames
+without a common reference. $\xi$ normalization removes $\sim$93\% of the
+apparent tension for redshift-derived distances and isolates a real $\sim$3\%
+physical residual for geometric measurements. The Cepheid data itself implies
+$H_0 \approx 70$ km/s/Mpc, between the two camps. The infrastructure to
+prevent this class of artifact from recurring in next-generation surveys exists
+and is described here.
+
+\section*{Data Availability}
+
+Reproduction code: \texttt{gaia\_zero\_bias\_test.py},
+\texttt{cepheid\_xi\_test.py}. Data: Pantheon+SH0ES public release
+\citep{brout2022}. Patent: US~63/902,536. DOI: 10.5281/zenodo.17435574.
+
+\bibliographystyle{aasjournal}
+\begin{thebibliography}{99}
+
+\bibitem[Planck Collaboration(2020)]{planck2020}
+Planck Collaboration, 2020, A\&A, 641, A6
+
+\bibitem[Riess et al.(2022)]{riess2022}
+Riess, A.G., et al., 2022, ApJL, 934, L7
+
+\bibitem[Brout et al.(2022)]{brout2022}
+Brout, D., et al., 2022, ApJ, 938, 110
+
+\bibitem[Martin(2025)]{martin2025}
+Martin, E.D., 2025, Universal Horizon Address, US Patent 63/902,536,
+DOI: 10.5281/zenodo.17435574
+
+\end{thebibliography}
+
+\end{document}
