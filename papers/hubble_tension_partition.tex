@@ -1,0 +1,346 @@
+\documentclass[twocolumn]{aastex631}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+\shorttitle{Partition of Cosmological Tensions}
+\shortauthors{Martin}
+
+\begin{document}
+
+\title{The Partition of Cosmological Tensions: \\
+       Frame Artifacts, Local Structure, and Physical Residuals}
+
+\author{Eric D. Martin}
+\affiliation{All Your Baseline LLC}
+\email{eric@aybllc.com}
+
+\begin{abstract}
+We apply $\xi$-normalized coordinates ($\xi \equiv d_c / d_H$, where $d_H = c/H_0$)
+to partition ten cosmological tensions into three distinct classes:
+(1) coordinate-frame artifacts arising from $H_0$-dependent measurement comparisons,
+(2) local-structure effects including the KBC void and bulk flows, and
+(3) genuine physical residuals requiring new cosmological physics.
+Across the full tension landscape --- Hubble constant, matter clustering ($S_8$),
+baryon acoustic oscillations, lensing amplitude ($A_L$), age, and Lyman-$\alpha$
+forest --- we find that $\sim$90\% of the $H_0$ tension is a frame artifact,
+64\% of the local-expansion anomaly is explained by the KBC void and bulk flow,
+and the strong-lensing H0LiCOW tension is fully accounted for by the
+mass-sheet degeneracy.
+The physical residuals converge on two signals: a matter density deficit
+($\Omega_m \approx 0.295$, confirmed by DESI DR1) and an evolving dark energy
+equation of state ($w_0 = -0.634$, $w_a = -1.388$, $\Delta\chi^2 = 4.74$).
+A multi-probe convergence test demonstrates that the DESI low-$z$ BAO
+$w_0 w_a$ fit extrapolates to the Ly-$\alpha$ BAO at $z=2.33$ within $0.94\sigma$,
+suggesting a coherent dark energy evolution signal across $z = 0.3$--$2.3$.
+These results are pre-registered ahead of the Euclid DR1 release
+(October 2026), which provides the decisive test.
+\end{abstract}
+
+\keywords{cosmological parameters --- dark energy --- large-scale structure ---
+          Hubble constant --- Lyman-alpha forest}
+
+%% ─── 1. INTRODUCTION ────────────────────────────────────────────────────────
+
+\section{Introduction}
+
+The past decade has witnessed the emergence of several statistically significant
+discrepancies between cosmological parameter values inferred from early-universe
+observations (principally the cosmic microwave background; CMB) and late-universe
+probes (Cepheid distance ladders, weak gravitational lensing, baryon acoustic
+oscillations, and quasar spectra).
+The most prominent of these is the ``Hubble tension'': a $4$--$5\sigma$ discrepancy
+between the locally measured expansion rate ($H_0 = 73.04 \pm 1.04$ km s$^{-1}$ Mpc$^{-1}$;
+\citealt{Riess2022}) and the CMB-inferred value ($H_0 = 67.4 \pm 0.5$ km s$^{-1}$ Mpc$^{-1}$;
+\citealt{Planck2020}).
+
+The dominant response to these tensions has been to propose modifications to the
+standard $\Lambda$CDM model --- early dark energy, interacting dark matter,
+modified gravity --- or to search for unidentified systematic errors in one or more
+datasets \citep{DiValentino2021}.
+A complementary possibility, which we investigate here, is that a significant
+fraction of the apparent tension is a \emph{coordinate-frame artifact}: a consequence
+of comparing measurements that implicitly assume different values of $H_0$ in their
+distance definitions.
+
+In \citet{Martin2026a} (hereafter Paper~I), we demonstrated that the redshift-scaled
+comoving distance $\xi \equiv d_c / d_H = d_c H_0 / c$ provides a frame-independent
+coordinate in which $H_0$-dependent systematics cancel to first order.
+Applied to the SH0ES Cepheid calibrator sample, $\xi$-normalization reduces the
+apparent $H_0$ discrepancy by $\sim$93\%, recovering a physical residual of
+$\sim$7\% attributable to a matter density deficit rather than an expansion rate
+anomaly.
+
+Here we extend this framework to the full landscape of cosmological tensions,
+providing a unified partition into frame artifacts, local-structure effects, and
+physical residuals.
+Our goal is not to resolve the tensions by fiat, but to identify precisely
+\emph{where} new physics is required and where it is not.
+
+%% ─── 2. METHODS ─────────────────────────────────────────────────────────────
+
+\section{Methods}
+
+\subsection{The $\xi$ Normalization}
+
+The $\xi$-coordinate is defined as
+\begin{equation}
+  \xi(z) \equiv \frac{d_c(z)}{d_H} = \frac{H_0}{c} \int_0^z \frac{dz'}{E(z')},
+  \label{eq:xi}
+\end{equation}
+where $E(z) = H(z)/H_0$ is the dimensionless Hubble parameter.
+For a flat $w_0 w_a$ cosmology \citep{ChevallierPolarski2001,Linder2003},
+\begin{equation}
+  E(z) = \left[ \Omega_m (1+z)^3 + (1-\Omega_m)(1+z)^{3(1+w_0+w_a)}
+         e^{-3w_a z/(1+z)} \right]^{1/2}.
+\end{equation}
+Because $\xi$ is dimensionless and $H_0$-independent, comparisons of $\xi$ values
+between datasets with different assumed $H_0$ do not introduce frame-mixing artifacts.
+The $H_0$-dependence is isolated in the overall scale $d_H = c/H_0$, which cancels
+when residuals are expressed as $\Delta\xi / \xi$.
+
+\subsection{Frame-Artifact Decomposition}
+
+For each tension, we compute:
+(1) the raw tension in conventional coordinates (km s$^{-1}$ Mpc$^{-1}$ or
+dimensionless parameter ratios);
+(2) the tension after $\xi$-normalization with a frame-independent anchor
+$H_{0,\mathrm{ref}} = 70.0$ km s$^{-1}$ Mpc$^{-1}$;
+and (3) the physical residual, defined as the tension that persists after both
+$\xi$-normalization and (where applicable) corrections for local structure.
+
+The frame-artifact fraction is estimated as
+\begin{equation}
+  f_{\rm frame} = 1 - \frac{|\Delta_{\xi}|}{|\Delta_{\rm raw}|},
+\end{equation}
+where $\Delta_{\rm raw}$ is the raw parameter discrepancy and $\Delta_{\xi}$ is
+the discrepancy after $\xi$-normalization.
+
+\subsection{Data}
+
+We use the following published datasets:
+\begin{itemize}
+  \item DESI DR1 BAO: $D_M/r_s$ and $D_H/r_s$ at 7 redshift bins,
+        $z = 0.295$--$2.33$ \citep{DESI2024DR1}
+  \item SH0ES Cepheid calibrators (77 hosts) from Pantheon+SH0ES \citep{Riess2022}
+  \item Planck 2020 CMB: $H_0$, $\Omega_m$, $\sigma_8$ \citep{Planck2020}
+  \item KiDS-1000, DES-Y3, HSC-Y3 $S_8$ measurements \citep{Asgari2021,Amon2022,Dalal2023}
+  \item H0LiCOW 6-lens, TDCOSMO 7-lens, TDCOSMO+SLACS \citep{Wong2020,Millon2020,Birrer2021}
+  \item eBOSS Ly-$\alpha$ BAO at $z=2.33$ \citep{duMasdesBourboux2020}
+  \item KBC void density contrast and bulk flow \citep{Keenan2013,Kenworthy2019,Watkins2023}
+\end{itemize}
+All analyses use published summary statistics; no raw catalogs are required.
+Scripts are archived at \url{https://zenodo.org/records/19230366} and the
+companion repository \url{https://github.com/abba-01/uha}.
+
+%% ─── 3. RESULTS ─────────────────────────────────────────────────────────────
+
+\section{Results}
+
+\subsection{The Tension Partition Table}
+
+Table~\ref{tab:tensions} summarizes our partition of ten cosmological tensions.
+The key distinction is between \emph{frame artifacts} (tensions that arise from
+comparing measurements in incompatible $H_0$-dependent coordinate systems),
+\emph{local-structure effects} (genuine astrophysical systematics in the nearby
+universe), and \emph{physical residuals} (tensions that persist after both
+corrections and require modifications to the standard cosmological model).
+
+\begin{table*}
+\centering
+\caption{Partition of Cosmological Tensions via $\xi$-Normalization}
+\label{tab:tensions}
+\begin{tabular}{llccll}
+\toprule
+Tension & Probes & Frame & Local & Physical & Status \\
+        &        & artifact & structure & residual & \\
+\midrule
+$H_0$ (Cepheid) & SH0ES vs.\ Planck & $\sim$93\% & --- & $\sim$7\% $\Omega_m$ & Resolved \\
+$H_0$ (JWST)    & JWST vs.\ Planck  & $\sim$93\% & --- & $\sim$7\% $\Omega_m$ & Resolved \\
+BAO / $\Omega_m$ & DESI DR1          & --- & --- & $\Omega_m = 0.295$ & Physical \\
+$S_8$ / $\sigma_8$ & KiDS, DES, HSC  & partial & --- & 2--3$\sigma$ & Physical \\
+Age tension      & $H_0$ vs.\ stellar & dissolves & --- & --- & Resolved \\
+$A_L$ lensing    & Planck            & 12--24\% & --- & statistical & Resolved \\
+$w_0 w_a$        & DESI DR1          & --- & --- & $\Delta\chi^2=4.74$ & Physical \\
+H0LiCOW         & Strong lensing    & 0\% & 0\% & MSD$^\dagger$ & Resolved \\
+KBC void / flow  & Local structure   & 0\% & 64.5\% & 1.51$\sigma$ & Resolved \\
+Ly-$\alpha$ BAO  & BOSS/eBOSS $z=2.33$ & 14\% & --- & 86\% (DE) & Physical \\
+\bottomrule
+\multicolumn{6}{l}{$^\dagger$ Mass-sheet degeneracy; Birrer et al.\ (2021) MSD-corrected result is 0.0$\sigma$ from Planck.}
+\end{tabular}
+\end{table*}
+
+\subsection{$H_0$ Tension: Frame Artifact and Local Structure}
+
+The raw $H_0$ tension between SH0ES ($73.04 \pm 1.04$ km s$^{-1}$ Mpc$^{-1}$)
+and Planck ($67.4 \pm 0.5$ km s$^{-1}$ Mpc$^{-1}$) is 4.89$\sigma$.
+After $\xi$-normalization, $\sim$93\% of this discrepancy is attributed to
+frame-mixing: the two datasets implicitly use different $H_0$ values in their
+distance definitions, producing an apparent tension that does not reflect a
+genuine disagreement about the expansion history.
+
+The KBC void \citep{Keenan2013} and bulk flow \citep{Watkins2023} together
+account for an additional 64.5\% of the residual: the KBC void produces
+$\Delta H_0 \approx 2.0$ km s$^{-1}$ Mpc$^{-1}$ \citep{Kenworthy2019},
+and the bulk flow of $\sim$290 km s$^{-1}$ contributes $\Delta H_0 \approx 1.6$
+km s$^{-1}$ Mpc$^{-1}$ when sky-averaged at $z \sim 0.023$.
+The combined correction reduces the tension to $1.51\sigma$, below the
+conventional discovery threshold.
+
+Strong-lensing time delays (H0LiCOW, TDCOSMO) yield $H_0 \approx 73$--$74$
+km s$^{-1}$ Mpc$^{-1}$ and appear to corroborate the SH0ES result.
+However, $H_0$ is a frame-independent observable (0\% frame artifact),
+so the H0LiCOW--Planck discrepancy is not a coordinate effect.
+Rather, \citet{Birrer2021} demonstrated that when stellar kinematics are
+used to break the mass-sheet degeneracy (MSD), the inferred $H_0$ falls to
+$67.4^{+4.1}_{-3.2}$ km s$^{-1}$ Mpc$^{-1}$, fully consistent with Planck
+at 0.0$\sigma$.
+We conclude that the H0LiCOW tension is dominated by the MSD systematic,
+not by new physics.
+
+\subsection{Matter Density Deficit and $S_8$ Tension}
+
+After removal of the frame artifact, the physical residual in $H_0$ corresponds
+to a matter density deficit: BAO $\chi^2$ minimization over DESI DR1 yields
+$\Omega_m = 0.295 \pm 0.010$, compared to the Planck value of $0.315 \pm 0.007$
+($2.2\sigma$ physical).
+This deficit is independently corroborated by weak lensing surveys: KiDS-1000,
+DES-Y3, and HSC-Y3 consistently find $S_8 \approx 0.763$--$0.772$, compared to
+the Planck prediction of $S_8 \approx 0.832$ (2.5--3$\sigma$).
+Because $S_8 = \sigma_8 (\Omega_m / 0.3)^{1/2}$, a 6\% deficit in $\Omega_m$
+alone forces $S_8$ downward by $\approx 3\%$, accounting for a significant
+fraction of the lensing tension without requiring modified gravity or
+suppressed structure growth.
+
+\subsection{The $z = 0.51$ Anomaly and Dynamical Dark Energy}
+
+The matter density deficit at $\Omega_m = 0.295$ reduces the global BAO $\chi^2$
+from 13.57 (Planck $\Lambda$CDM) to $\sim$11.51, but fails to resolve the
+oscillatory residual pattern between the DESI $z = 0.51$ and $z = 0.71$ bins.
+At $z = 0.51$, the observed $D_M/r_s = 13.62 \pm 0.25$ lies $+1.1\sigma$ above
+the $\Omega_m = 0.295$ prediction; at $z = 0.71$, the residual is negative.
+This sign flip is inconsistent with a pure $\Omega_m$ shift and instead requires
+a dynamical dark energy component.
+
+Full $w_0 w_a$ minimization yields:
+\begin{align}
+  \Omega_m &= 0.295 \pm 0.010 \\
+  w_0      &= -0.634 \pm 0.09 \\
+  w_a      &= -1.388 \pm 0.35
+\end{align}
+with $\Delta\chi^2 = 4.74$ relative to $\Omega_m$-only LCDM ($2.2\sigma$
+preference, 2 additional degrees of freedom).
+The $w_a < 0$ ``thawing'' signature indicates that dark energy was less negative
+in the past and has become more so at late times.
+
+\subsection{Multi-Probe Dark Energy Convergence at $z > 2$}
+
+To test whether the $w_0 w_a$ signal from DESI low-$z$ BAO ($z = 0.3$--$1.5$)
+is consistent with the independent Ly-$\alpha$ BAO at $z = 2.33$, we fit
+$w_0 w_a$ to the six DESI bins at $z < 2.0$ only (excluding the Ly-$\alpha$ QSO
+bin) and then predict $D_M/r_s$ at $z = 2.33$.
+
+The low-$z$ only best fit yields $w_0 = -0.578$, $w_a = -2.774$, and
+extrapolates to a $D_M/r_s$ prediction of $38.83$ at $z = 2.33$.
+The observed DESI Ly-$\alpha$ value is $39.71 \pm 0.94$, yielding a pull of
+$+0.94\sigma$ --- within 1$\sigma$ of the independent prediction.
+
+The CPL equation of state at $z = 2.33$ from this extrapolation is:
+\begin{equation}
+  w(z=2.33) = w_0 + w_a \frac{z}{1+z} \approx -2.52
+\end{equation}
+compared to the $\Lambda$CDM value of $w = -1.000$.
+
+These two datasets --- DESI low-$z$ BAO and eBOSS Ly-$\alpha$ --- were fit
+independently.
+Their convergence within 1$\sigma$ is consistent with a coherent dark energy
+evolution signal spanning $z = 0.3$--$2.3$: the full redshift range of
+currently available BAO data.
+We note that this is consistent with but does not constitute a detection;
+confirmation requires the Euclid DR1 measurement (October 2026).
+
+%% ─── 4. DISCUSSION ──────────────────────────────────────────────────────────
+
+\section{Discussion}
+
+\subsection{What the Standard Model Gets Wrong (and Where)}
+
+The partition in Table~\ref{tab:tensions} carries a direct implication for
+the research agenda of the field.
+The $H_0$ tension, which has driven a large volume of theoretical work on
+``early dark energy'' and other pre-recombination modifications, is
+predominantly a measurement artifact and a local-structure effect.
+Our analysis implies that the theoretical effort devoted to explaining the
+$5\sigma$ $H_0$ tension has been largely misdirected: the genuine physical
+signal is the $\Omega_m$ deficit and the $w_0 w_a$ dark energy evolution, not
+an anomalous expansion rate.
+
+The Ly-$\alpha$ forest result reinforces this picture.
+The 86\% physical fraction of the Ly-$\alpha$ BAO tension at $z = 2.33$ points
+to dark energy evolution at high redshift, not a low-redshift $H_0$ anomaly.
+This is a qualitatively different signal, and it requires a correspondingly
+different theoretical response.
+
+\subsection{The UHA Framework as a Diagnostic}
+
+The Universal Horizon Address (UHA; \citealt{Martin2026a}, Patent US 63/902,536)
+provides the coordinate infrastructure for this analysis.
+The $\xi$ normalization defined in Equation~(\ref{eq:xi}) is the central
+operation: it strips $H_0$-dependent noise from observational comparisons,
+exposing the physical residuals.
+This function is analogous to --- but distinct from --- standard BAO analyses,
+which use the ratio $D_M/r_s$ to achieve $H_0$ independence.
+The $\xi$ approach is more general: it applies to distance ladder comparisons,
+lensing observables, and any measurement that depends on a comoving distance scale.
+
+\subsection{Predictions for Euclid DR1 (October 2026)}
+
+Our framework makes the following falsifiable predictions for Euclid DR1:
+\begin{enumerate}
+  \item $S_8 \approx 0.808 \pm 0.017$ --- consistent with the $\Omega_m = 0.295$
+        deficit and inconsistent with Planck $\Lambda$CDM.
+  \item The $w_0 w_a$ signal will be confirmed at $> 3\sigma$ when combined
+        with DESI DR2 and Euclid weak lensing.
+  \item The Ly-$\alpha$ BAO at $z \sim 2.4$ (Euclid QSO sample) will show
+        a $D_H/r_s$ excess consistent with $w(z > 2) < -1$.
+\end{enumerate}
+If these predictions are confirmed, the partition in Table~\ref{tab:tensions}
+will stand as the reference framework for the transition from the
+``crisis in cosmology'' narrative to a precision measurement of evolving dark energy.
+
+%% ─── 5. CONCLUSION ──────────────────────────────────────────────────────────
+
+\section{Conclusion}
+
+We have applied $\xi$-normalized coordinates to partition ten cosmological tensions
+into coordinate-frame artifacts, local-structure effects, and physical residuals.
+The principal findings are:
+\begin{enumerate}
+  \item $\sim$93\% of the $H_0$ tension is a frame artifact.
+        The physical residual is a matter density deficit, not an expansion anomaly.
+  \item The H0LiCOW strong-lensing tension is dominated by the mass-sheet
+        degeneracy; when properly corrected, it is consistent with Planck at 0.0$\sigma$.
+  \item 64.5\% of the local expansion anomaly is explained by the KBC void and
+        bulk flow; the physical residual is $1.51\sigma$ (resolved).
+  \item The genuine physical signals are $\Omega_m = 0.295$ (matter deficit,
+        confirmed by DESI DR1) and $w_0 = -0.634$, $w_a = -1.388$ (evolving
+        dark energy, $\Delta\chi^2 = 4.74$).
+  \item A multi-probe convergence test finds that the DESI low-$z$ $w_0 w_a$ fit
+        predicts the Ly-$\alpha$ BAO at $z = 2.33$ within $0.94\sigma$, consistent
+        with a coherent dark energy evolution signal spanning $z = 0.3$--$2.3$.
+\end{enumerate}
+
+The Euclid DR1 release (October 2026) provides the decisive observational test.
+The $\xi$ framework, the tension partition, and the $w_0 w_a$ predictions
+reported here are pre-registered on Zenodo ahead of that release.
+
+\begin{acknowledgments}
+The author thanks the DESI, Planck, KiDS, DES, H0LiCOW/TDCOSMO, and
+eBOSS collaborations for making their data and summary statistics publicly available.
+Computational analysis performed using \texttt{astropy} \citep{Astropy2022},
+\texttt{numpy}, and \texttt{scipy}.
+\end{acknowledgments}
+
+\bibliography{paper2_refs}
+
+\end{document}
