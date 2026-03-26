@@ -1,0 +1,12 @@
+N,astropy_ms,astropy_ns,astropy_pts_per_sec,kdtree_build_ms,kdtree_query_ms,kdtree_total_ms,morton_encode_ms,morton_ms,morton_pts_per_sec,morton_query_ms,morton_sort_ms,morton_total_ms,note,speedup,speedup_vs_astropy,test,tlv_ms,uha_morton_ns,uha_tlv_ns
+,,72557.6728,,,,,,,,,,,,,277.8121545184403,single_point_latency,,625.248,261.1753
+100,4.106,,24356,,,,,0.119,840526,,,,,34.5,,batch_transform,0.044,,
+1000,0.969,,1031978,,,,,0.139,7209389,,,,,7.0,,batch_transform,0.358,,
+10000,1.889,,5292492,,,,,0.381,26280311,,,,,5.0,,batch_transform,3.383,,
+50000,6.084,,8218442,,,,,1.703,29361177,,,,,3.6,,batch_transform,20.019,,
+100000,15.565,,6424479,,,,,5.191,19262789,,,,,3.0,,batch_transform,38.878,,
+100,,,,0.079,1.75,1.829,0.11,,,0.036,0.013,0.159,All N points queried in both methods — vectorized,11.5,,proximity_detection,,,
+1000,,,,0.269,1.311,1.579,0.15,,,0.065,0.014,0.23,All N points queried in both methods — vectorized,6.9,,proximity_detection,,,
+10000,,,,1.507,2.395,3.903,0.427,,,0.639,0.074,1.14,All N points queried in both methods — vectorized,3.4,,proximity_detection,,,
+50000,,,,8.467,6.221,14.687,2.04,,,4.185,0.438,6.664,All N points queried in both methods — vectorized,2.2,,proximity_detection,,,
+100000,,,,18.822,15.518,34.34,6.824,,,10.986,2.639,20.449,All N points queried in both methods — vectorized,1.7,,proximity_detection,,,
