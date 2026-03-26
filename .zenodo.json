@@ -1,0 +1,30 @@
+{
+  "creators": [
+    {
+      "name": "Martin, Eric D.",
+      "affiliation": "All Your Baseline LLC",
+      "orcid": ""
+    }
+  ],
+  "title": "UHA: Universal Horizon Address — Research Repository",
+  "description": "Research repository for the Universal Horizon Address (UHA) framework, N/U Algebra, and cosmological tension analyses. Includes Paper 2 pre-registration: Partition of Cosmological Tensions (pre-registered ahead of Euclid DR1, October 2026).",
+  "license": "Apache-2.0",
+  "keywords": [
+    "cosmology",
+    "Hubble tension",
+    "dark energy",
+    "Universal Horizon Address",
+    "N/U Algebra",
+    "xi normalization",
+    "BAO",
+    "DESI"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.19230366",
+      "relation": "isSupplementTo",
+      "scheme": "doi"
+    }
+  ],
+  "access_right": "open"
+}
