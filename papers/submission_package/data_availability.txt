@@ -1,0 +1,18 @@
+DATA AVAILABILITY STATEMENT
+(Insert as final section before References in the .tex file)
+
+---
+
+\section*{Data Availability}
+
+All analysis code is publicly available at \url{https://github.com/abba-01/uha}.
+The Pantheon+SH0ES dataset used in this work is the public release from
+\citet{brout2022}, available at \url{https://pantheonplussh0es.github.io}.
+Reproduction scripts: \texttt{gaia\_zero\_bias\_test.py},
+\texttt{cepheid\_xi\_test.py}, \texttt{jwst\_xi\_test.py},
+\texttt{bao\_xi\_test.py}, \texttt{s8\_sigma8\_xi\_test.py}
+(all in the repository above).
+This manuscript is deposited at Zenodo: DOI~10.5281/zenodo.19211662.
+The Universal Horizon Address theory and patent are archived at
+DOI~10.5281/zenodo.17435574 (US Patent 63/902,536).
+No proprietary data were used.

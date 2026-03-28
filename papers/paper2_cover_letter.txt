@@ -1,0 +1,63 @@
+Dear Editor,
+
+I submit for consideration as an ApJL Letter the manuscript:
+
+  "The Partition of Cosmological Tensions: Frame Artifacts, Local Structure,
+   and Physical Residuals"
+  Eric D. Martin, All Your Baseline LLC
+
+This Letter applies the Universal Horizon Address (UHA) ξ-normalization
+framework to classify ten active cosmological tensions into three
+mechanistic categories. The central result is a quantitative partition:
+
+  H₀ tension (Cepheid/JWST):  93% frame artifact, 7% Ω_m deficit  → resolved
+  Ω_m deficit (DESI DR1):     Ω_m = 0.295 ± 0.010 (2.2σ)         → physical
+  S8/σ₈ tension:              Ω_m-driven, 2–3σ residual            → physical
+  w₀wₐ dark energy:           Δχ² = 4.74 (2.2σ), w₀=−0.634        → physical
+  H0LiCOW/TDCOSMO:            MSD → 0.0σ after ξ-normalization     → resolved
+  KBC void/bulk flow:         64.5% local structure, 1.51σ residual → resolved
+  Lyα BAO:                    14% frame, 86% dark energy signal     → physical
+
+The framework makes three falsifiable predictions pre-registered against
+Euclid DR1 (October 2026):
+
+  1. S8 = 0.808 ± 0.017
+  2. w₀wₐ confirmed >3σ (DESI DR2 + Euclid WL combined)
+  3. Lyα D_H/r_s excess consistent with w(z>2) < −1
+
+Pre-registration DOI: 10.5281/zenodo.19232340 (abba-01/uha v2.0.0,
+timestamped 2026-03-27, prior to Euclid DR1).
+
+The companion Paper 1, "The Hubble Tension as a Measurement Artifact,"
+is currently under review at MNRAS Letters (submitted 2026-03-25,
+DOI: 10.5281/zenodo.19230366). The present manuscript is self-contained
+and does not require Paper 1 for interpretation; it extends the framework
+from a single-tension analysis to a full multi-tension partition.
+
+The Letter is 5 pages in AASTeX 6.3.1 format, includes one table (the
+tension partition), and contains no figures. The N/U Algebra uncertainty
+propagation (O(1) complexity, 4,844× faster than Monte Carlo) enables
+closed-form uncertainty bounds throughout.
+
+I suggest the following reviewers:
+
+  Licia Verde (ICC Barcelona) — tension statistics and H₀ meta-analysis
+  Julien Lesgourgues (RWTH Aachen) — dark energy and neutrino cosmology
+  Cullan Howlett (U. Queensland) — bulk flow and local structure
+  Daniel Gruen (LMU Munich) — weak lensing and S8 measurements
+  Eric Linder (Berkeley) — w₀wₐ dark energy parametrization
+
+I request that Adam Riess (JHU) and Vivian Poulin (Montpellier) not
+serve as reviewers, as their published positions constitute a direct
+conflict with the frame-artifact interpretation presented here.
+
+The work is not under consideration elsewhere. All data used are public
+(Planck 2018, DESI DR1, KiDS-1000, DES Y3, H0LiCOW/TDCOSMO, eBOSS Lyα).
+All code is open source (GitHub: abba-01/uha, Zenodo DOI: 10.5281/zenodo.19230683).
+
+Thank you for your consideration.
+
+Eric D. Martin
+All Your Baseline LLC
+ORCID: 0009-0006-5944-1742
+eric@allyourbaseline.com

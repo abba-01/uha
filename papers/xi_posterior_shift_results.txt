@@ -1,0 +1,18 @@
+xi_posterior_shift.py — Formal Results
+=======================================================
+
+M_B (Cepheid) = -19.2517 ± 0.0400
+M_B required for Planck H₀ = -19.4262
+M_B tension = 4.4σ
+
+H₀ from local data (Ω_m=0.334): 73.2 km/s/Mpc
+Δchi2 at H₀=67.4: 1266.1
+
+ξ residual (SH0ES vs Planck): 0.2897%
+H₀ tension (raw): 8.37%
+Artifact fraction: 96.5%
+Physical residual: 3.5%
+
+Frame-mixing chi2 inflation: 1358
+Internally consistent SH0ES chi2: 696.0
+Internally consistent Planck chi2: 703.2

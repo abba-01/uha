@@ -1,0 +1,12 @@
+MNRAS KEYWORDS (select 1-6 from official list)
+
+Recommended for this manuscript:
+
+1. cosmological parameters
+2. distance scale
+3. cosmology: observations
+4. methods: data analysis
+5. large-scale structure of Universe
+
+(Source: MNRAS keyword list at https://academic.oup.com/mnras/pages/general_instructions)
+Enter these exactly as shown in ScholarOne — they must match the controlled vocabulary.
