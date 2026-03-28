@@ -9,7 +9,7 @@ The Partition of Cosmological Tensions: A Three-Component Decomposition Using Ho
 ### AUTHORS
 Martin, Eric D.
   Affiliation: All Your Baseline LLC
-  ORCID: (add if you have one)
+  ORCID: 0009-0006-5944-1742
 
 ### UPLOAD TYPE
 Publication → Preprint
