@@ -17,8 +17,8 @@ and the $\Omega_m$ Deficit}
 \author{Eric D. Martin\\
 \small Independent Researcher}
 
-\date{2026-03-25\\
-\small Preprint --- Session: bdf10532-f890-40c7-8abf-adaa29ec06b1}
+\date{2026-03-28\\
+\small Preprint}
 
 \begin{document}
 \maketitle
@@ -36,7 +36,7 @@ Using the DESI 2024/25 Baryon Acoustic Oscillation (BAO) data
 \citep{DESI_2024_DR1, DESI_2025_DR2}, we fit a $\chi^2$ minimizer with
 self-consistent sound-horizon scaling $r_s(\Omega_m)$ and find a best-fit
 $\Omega_m = 0.268$ (7-bin $D_M/r_s$ analysis, $\Delta\chi^2 = 7.06$ vs.\
-Planck $\Lambda$CDM), confirming the direction of the matter density deficit
+Planck $\Lambda$CDM), consistent with the direction of the matter density deficit
 independently reported by DESI DR1 ($\Omega_m = 0.295 \pm 0.010$). Adding
 $w_0w_a$ freedom reduces $\chi^2$ by only $0.12$ for two additional parameters,
 providing no statistical support for dynamical dark energy in this dataset
@@ -57,7 +57,7 @@ dark energy \citep{Poulin2019}, modified gravity, and non-standard
 recombination. In \citet{Martin2025_Paper1}, we demonstrated that 93.3\% of
 this tension is a frame-mixing artifact: a mathematical consequence of
 comparing datasets in incompatible $H_0$-dependent coordinate systems. The
-residual physical signal is a $\sim$3\% matter density discrepancy.
+residual physical signal is a $\sim$6\% matter density discrepancy.
 
 Here we extend that analysis to characterise the residual using the DESI
 2024/25 BAO dataset \citep{DESI_2024_DR1, DESI_2024_w0wa, DESI_2025_DR2}. We
@@ -88,7 +88,7 @@ A critical methodological requirement is that the sound horizon $r_s$ must be
 varied self-consistently with $\Omega_m$. Fixing $r_s$ at the Planck fiducial
 (147.09 Mpc) while varying $\Omega_m$ inverts the sign of the fit, producing a
 spurious apparent excess rather than the physical deficit. We use the
-Percival~(2007) scaling:
+\citealt{Percival2007} scaling:
 \begin{equation}
     r_s(\Omega_m) = 147.09 \left(\frac{\Omega_m h^2}{0.1430}\right)^{-0.255}
     \text{ Mpc}
@@ -96,7 +96,12 @@ Percival~(2007) scaling:
 normalized to the Planck~2018 value at $\Omega_m = 0.315$, $h = 0.674$
 \citep{Planck2020}. This ensures $D_M/r_s$ is computed with both numerator and
 denominator varying as functions of $\Omega_m$, preserving the $H_0$-independence
-of the ratio.
+of the ratio.\footnote{An earlier version of this analysis held $r_s$ fixed at
+the Planck fiducial while varying $\Omega_m$. This inverts the sign of the
+$\Omega_m$ sensitivity and produced a spurious $w_0w_a$ improvement
+($\Delta\chi^2 = 4.74$). With self-consistent $r_s(\Omega_m)$ scaling, the
+$w_0w_a$ improvement collapses to $\Delta\chi^2 = 0.12$ (Table~\ref{tab:chi2}).
+All results in this paper use the corrected formulation.}
 
 We run $\chi^2$ minimizers over $\{\Omega_m\}$, $\{\Omega_m, w_a\}$, and
 $\{\Omega_m, w_0, w_a\}$ to quantify each parameter's contribution.
@@ -119,7 +124,7 @@ $S_8/\sigma_8$ weak lensing signal from KiDS-1000 and DES~Y3
 
 Our best-fit $\Omega_m = 0.268$ is lower than the DESI DR1 full-analysis value
 of $0.295 \pm 0.010$. This discrepancy likely reflects the limitations of the
-Percival (2007) $r_s$ approximation and our restriction to $D_M/r_s$ data
+\citealt{Percival2007} $r_s$ approximation and our restriction to $D_M/r_s$ data
 without the full covariance matrix (see Section~\ref{sec:limitations}). The
 qualitative conclusion is robust: the matter density is below the Planck
 $\Lambda$CDM value across all analyses.
@@ -176,19 +181,15 @@ $\xi$-normalization:
     $\xi$-normalization; the $H_0$ factor cancels exactly for redshift-derived
     distances.
     \item \textbf{$\sim$5\% matter density deficit} --- a global
-    $\Omega_m < 0.315$ confirmed independently by $\xi$-residuals (this work),
+    $\Omega_m < 0.315$ consistent with $\xi$-residuals (this work),
     DESI DR1 BAO \citep{DESI_2024_DR1}, DESI DR2 \citep{DESI_2025_DR2}, and
     $S_8/\sigma_8$ weak lensing \citep{Heymans2021, Amon2022}.
 \end{enumerate}
 
-A third layer --- evolving dark energy ($w_0w_a$) --- was suggested by an
-earlier, incorrect analysis in which $r_s$ was held fixed at the Planck
-fiducial while $\Omega_m$ was varied. Fixing $r_s$ inverts the direction of
-the $\Omega_m$ sensitivity and produces a spurious $w_0w_a$ improvement
-($\Delta\chi^2 = 4.74$ in the incorrect version). With the corrected
-self-consistent $r_s(\Omega_m)$ scaling, the $w_0w_a$ improvement collapses to
-$\Delta\chi^2 = 0.12$. We report the corrected result here; the dark energy
-question remains open and requires Euclid DR1 to resolve.
+A $w_0w_a$ dark energy layer is not supported by the current data
+($\Delta\chi^2 = 0.12$ for two additional parameters). The dark energy question
+remains open and requires Euclid DR1 to resolve (see Section~\ref{sec:limitations}
+and the Methods footnote on $r_s$ self-consistency).
 
 \subsection{The $S_8$ Tension as a Matter Density Tie-Breaker}
 
@@ -201,7 +202,7 @@ Amon2022}. Within our $\xi$-normalized framework, this clustering tension is
 not a separate crisis but a secondary manifestation of the same $\Omega_m$
 deficit. A genuine deficit in $\Omega_m$ relative to Planck mathematically
 forces a lower $S_8$ value. Confirmation of $S_8 < 0.83$ at high significance
-would constitute a definitive tie-breaker for the matter density hypothesis
+would constitute strong independent evidence for the matter density hypothesis
 over a coordinate artifact.
 
 \subsection{Reply to the JWST $8\sigma$ Objection}
@@ -222,7 +223,7 @@ This analysis has several important limitations. (1)~The $\chi^2$ minimizer
 uses only the $D_M/r_s$ observables; a full analysis would incorporate
 $D_H/r_s$ and the complete bin covariance matrix, which is expected to shift
 the $\Omega_m$ central value toward the DESI-reported 0.295. (2)~The
-$r_s(\Omega_m)$ scaling from Percival~(2007) is an approximation; a more
+$r_s(\Omega_m)$ scaling from \citealt{Percival2007} is an approximation; a more
 accurate treatment would vary both $\Omega_b h^2$ and $\Omega_m h^2$ jointly.
 (3)~We make no claim of a detection of dynamical dark energy from this
 analysis; the $\Delta\chi^2 = 0.12$ for $w_0w_a$ is statistically negligible.
@@ -236,8 +237,8 @@ shift quantitative results.
 
 The Hubble tension decomposes into two separable layers under $\xi$-normalized
 BAO analysis. The dominant layer ($\sim$90\%) is a coordinate artifact removed
-by horizon-normalization. The residual is a matter density deficit confirmed
-independently by DESI BAO, weak lensing surveys, and the $\xi$-normalized
+by horizon-normalization. The residual is a matter density deficit consistent with
+DESI BAO, weak lensing surveys, and the $\xi$-normalized
 analysis presented here. Current BAO data do not support a dynamical dark
 energy component; the $w_0w_a$ improvement is statistically negligible
 ($\Delta\chi^2 < 0.2$ for two parameters). The $\xi$-normalization framework
@@ -313,6 +314,11 @@ DOI: 10.5281/zenodo.17435574
 \bibitem[Martin(2025b)]{Martin2025_Paper1}
 Martin E.~D., 2025b, The Hubble Tension as a Measurement Artifact,
 DOI: 10.5281/zenodo.19211662
+
+\bibitem[Percival et al.(2007)]{Percival2007}
+Percival W.~J., Cole S., Eisenstein D.~J., Nichol R.~C., Peacock J.~A.,
+Pope A.~C., Szalay A.~S., 2007, MNRAS, 381, 1053,
+DOI: 10.1111/j.1365-2966.2007.12268.x
 
 \bibitem[Planck Collaboration(2020)]{Planck2020}
 Planck Collaboration, 2020, A\&A, 641, A6,
