@@ -214,8 +214,9 @@ def build_tidal_tensor(ra, dec, d_mpc):
         )
         T += T_k
 
-        # Peculiar velocity from this attractor (km/s)
-        v_mag = G_SI * M_kg / r_m**2 * r_m / 1e3   # rough estimate
+        # Peculiar velocity scale from this attractor (km/s)
+        # v ~ sqrt(G*M/r) — gravitational velocity scale at distance r
+        v_mag = np.sqrt(G_SI * M_kg / r_m) / 1e3   # km/s
         v_vec = -v_mag * dr_hat
         v_total += v_vec
 
