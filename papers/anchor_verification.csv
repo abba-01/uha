@@ -1,0 +1,12 @@
+name,z,ra,dec,survey,xi_observed,xi_corrected,delta_xi,nearest_attractor,notes
+Virgo Cluster,0.0036,187.7,12.4,2MRS,0.003597178858228496,0.0002615379062469755,0.0033356409519815205,Virgo Cluster,nearest rich cluster
+Coma Cluster,0.0231,194.9,27.9,2MRS,0.022983334181175763,0.019791711987508717,0.003191622193667047,Virgo Cluster,"rich cluster, well-studied"
+Perseus Cluster,0.0179,49.9,41.5,2MRS,0.017830027405997324,0.016268042550936206,0.0015619848550611187,Perseus-Pisces,X-ray bright cluster
+Cygnus A,0.0561,299.9,40.7,radio,0.05540712326948771,0.05540712326948771,0.0,none,"powerful radio galaxy, xi calibration"
+SDSS J1030+0524,6.28,157.6,5.4,SDSS,1.9750028295951942,1.9750028295951942,0.0,none,"high-z QSO, early reionization era"
+ULAS J1120+0641,7.09,170.1,6.7,UKIRT,2.045536737567792,2.0423690447607306,0.003167692807061517,Virgo Cluster,most distant QSO known until 2017
+ULAS J1342+0928,7.54,205.5,9.5,Pan-STARRS,2.0803301315688687,2.0771525777703843,0.003177553798484457,Virgo Cluster,"z>7 QSO, near reionization"
+GN-z11,10.6,189.1,62.2,JWST/HST,2.2605301388326926,2.2605301388326926,0.0,none,"brightest z>10 galaxy, confirmed"
+JADES-GS-z13-0,13.2,53.1,-27.8,JWST,2.3653425215938952,2.3653425215938952,0.0,none,"JADES program, z>13 confirmed"
+JADES-GS-z14-0,14.32,53.1,-27.8,JWST,2.402039274720722,2.402039274720722,0.0,none,most distant confirmed galaxy (2024)
+CMB last scattering,1100.0,0.0,0.0,Planck,0.9997,0.9997,0.0,none,xi~1 by definition; coordinate system edge
