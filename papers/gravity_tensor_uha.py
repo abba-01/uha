@@ -93,13 +93,12 @@ def encode_anchor(obj, h0=H0, om=OM, ol=OL):
     ra  = obj['ra']
     dec = obj['dec']
 
-    # Comoving distance and xi
-    if z < 1090:   # normal objects
-        dc = comoving_distance(z, om, ol)
-        xi = dc / horizon_radius(h0)
-    else:
-        # CMB last scattering: xi -> 1 asymptotically
-        xi = 0.9997   # Planck best-fit
+    # Comoving distance and xi = d_c / d_H where d_H = c/H0 (Hubble distance)
+    # NOTE: xi > 1 is correct for high-z objects (d_c can exceed c/H0).
+    # d_H = c/H0 ~ 4449 Mpc; particle horizon ~14000 Mpc → xi_CMB ~ 3.15
+    # Do NOT hardcode CMB to 0.9997 — compute it consistently.
+    dc = comoving_distance(min(z, 1090.0), om, ol)
+    xi = dc / horizon_radius(h0)
 
     # Cartesian shell coords
     x, y, z_cart = radec_to_cartesian_shell(
