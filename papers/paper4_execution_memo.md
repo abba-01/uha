@@ -6,16 +6,40 @@ Pre-registration DOI: 10.5281/zenodo.19322304
 
 ---
 
-## Current Status
+## Current Status (updated 2026-03-29)
 
 | Task | Status |
 |---|---|
 | Pipeline A (UHA round-trip validation) | **COMPLETE** — all tests pass, committed, DOI minted |
 | SDSS DR16 shell map (raw) | **COMPLETE** — 4 figures, 500k galaxies, ξ∈[0.001,0.653] |
-| Pipeline B — SDSS 1/V_max correction | **RUNNING** — V_max loop for 500k galaxies |
-| DESI DR1 LRG download | **COMPLETE** — 2.8 GB on disk |
-| DESI DR1 BGS download | **IN PROGRESS** — ~4.8 GB of ~5 GB |
+| Pipeline B — SDSS 1/V_max correction | **COMPLETE** — phi steep→flat confirms flux-limit behavior |
+| Pipeline B — DESI BGS correction | **COMPLETE** — phi flat ~1.00 across full range |
+| Pipeline B — DESI LRG correction | **COMPLETE** — phi flat ~1.00 across full range |
+| DESI DR1 BGS download | **COMPLETE** — 4.9 GB, 6.4M galaxies |
+| DESI DR1 LRG download | **COMPLETE** — 2.8 GB, 3.5M galaxies |
 | Paper 4 LaTeX skeleton | Pending — all pieces exist |
+
+---
+
+## Pipeline B Results — Selection Function Comparison
+
+| Dataset | ξ range | phi low-ξ | phi plateau | Attractor-flagged | Behavior |
+|---|---|---|---|---|---|
+| SDSS DR16 | [0.012, 0.539] | **4.08** | ~0.41 | 6.0% (30,147) | Steep — flux-limited, correction needed |
+| DESI BGS | [0.006, 0.314] | **1.03** | ~1.000 | 6.7% (259,337) | **Flat — FKP pre-corrected** |
+| DESI LRG | [0.015, 0.715] | **1.05** | ~0.999 | 10.1% (236,059) | **Flat — FKP pre-corrected** |
+
+**What this means (locked wording, 2026-03-29):**
+
+> "The SDSS bridge sample exhibits the expected flux-limited radial selection function, whereas the DESI BGS and LRG catalogs are effectively flat in the same φ(ξ) diagnostic. This indicates that the DESI shell-density profile can be treated as the primary scientific observable, with substantially reduced radial-selection contamination relative to SDSS."
+
+**Safe claim:** "No strong residual radial selection trend is visible in the current φ diagnostic for DESI BGS/LRG."
+
+**Not yet claimed:** "Essentially no selection bias remaining" — angular systematics and random catalog treatment still needed for full rigor.
+
+**Two-step validation achieved:**
+- SDSS: correction machinery detects and handles a real flux-limit selection function ✓
+- DESI: same machinery shows flat φ where none is needed — not manufacturing false corrections ✓
 
 ---
 
@@ -83,12 +107,13 @@ Paper 4 clears the bar when it has all of the following:
 
 ## Immediate Next Actions (priority order)
 
-1. **Wait for SDSS Pipeline B to finish** — then inspect corrected shell-density profile and compare-masked panel
-2. **Complete DESI BGS download** — then run same Pipeline B on BGS
-3. **Run Pipeline B on DESI LRG** — already on disk
+1. **Inspect DESI compare-masked panels** — BGS and LRG: does the residual persist after attractor cone removal? This is the primary Paper 4 diagnostic
+2. **BGS vs LRG cross-check** — do the corrected shell profiles show coherent residual structure across the two DESI samples?
+3. **DESI vs SDSS comparison** — if residual structure is coherent across both surveys after masking, it is hard to dismiss as catalog handling
 4. **Add CDG-2 as named overlay** — annotate shell map at ξ ≈ 0.017, Perseus cluster region
-5. **Write Paper 4 LaTeX skeleton** — intro ready from G5 gap analysis; sections: Coordinate, Validation, Selection, SDSS Result, DESI Result, Anchor Objects, Discussion
-6. **Zenodo: upload updated pipeline package** — after DESI results are committed
+5. **Check residual direction against Papers 1 & 2 predictions** — does the shell residual trend toward Ω_m ≈ 0.295? w0wa direction?
+6. **Write Paper 4 LaTeX skeleton** — sections: Coordinate, Validation (Pipeline A), Selection (waterfall), SDSS Bridge Result, DESI Science Result, Anchor Objects (CDG-2), Discussion
+7. **Zenodo: upload updated pipeline package** — after DESI results are committed
 
 ---
 
