@@ -71,7 +71,7 @@ DATASETS = {
     },
     'desi_bgs': {
         'label':      'DESI DR1 BGS Bright',
-        'mag_limit':  19.5,
+        'mag_limit':  None,          # use FKP weights directly
         'mag_band':   'r',
         'sky_mask':   None,
         'z_max':      0.40,
@@ -80,8 +80,10 @@ DATASETS = {
         'catalog':    '/scratch/repos/galaxy-survey-data/galaxy_catalogs/desi_dr1/BGS_BRIGHT_full.fits',
         'ra_col':     'RA',
         'dec_col':    'DEC',
-        'z_col':      'Z',
-        'mag_col':    None,  # use completeness weight from catalog if present
+        'z_col':      'Z_not4clus',
+        'mag_col':    None,
+        'zwarn_col':  'ZWARN',       # filter to ZWARN==0
+        'weight_col': 'WEIGHT_FKP_NTILE',  # use survey FKP weights
     },
     'desi_lrg': {
         'label':      'DESI DR1 LRG',
@@ -94,8 +96,10 @@ DATASETS = {
         'catalog':    '/scratch/repos/galaxy-survey-data/galaxy_catalogs/desi_dr1/LRG_full.fits',
         'ra_col':     'RA',
         'dec_col':    'DEC',
-        'z_col':      'Z',
+        'z_col':      'Z_not4clus',
         'mag_col':    None,
+        'zwarn_col':  'ZWARN',
+        'weight_col': 'WEIGHT_FKP_NTILE',
     },
 }
 
@@ -281,6 +285,20 @@ def load_catalog_with_mag(ds_config, max_rows=None):
             mag = None
             if mag_col and mag_col in data.dtype.names:
                 mag = np.array(data[mag_col], dtype=float)
+            # DESI-style: apply ZWARN filter and load FKP weights as mag proxy
+            zwarn_col  = ds_config.get('zwarn_col')
+            weight_col = ds_config.get('weight_col')
+            if zwarn_col and zwarn_col in data.dtype.names:
+                zwarn_ok = np.array(data[zwarn_col], dtype=int) == 0
+                ra  = ra[zwarn_ok];  dec = dec[zwarn_ok];  z = z[zwarn_ok]
+                if mag is not None: mag = mag[zwarn_ok]
+            if weight_col and weight_col in data.dtype.names:
+                fkp_w = np.array(data[weight_col], dtype=float)
+                if zwarn_col and zwarn_col in data.dtype.names:
+                    fkp_w = fkp_w[zwarn_ok]
+                # Store FKP weights in mag slot — loader will use them as weights
+                mag = fkp_w
+                ds_config['_fkp_weights'] = True  # flag for weight logic below
     else:
         raise ValueError(f"Unsupported file format: {ext}")
 
@@ -335,9 +353,16 @@ def run_pipeline_b(dataset_name, n_shells=20, attractor_cone=15.0,
     # ── xi coordinate ─────────────────────────────────────────────────────────
     xi = xi_normalize(z)
 
-    # ── 1/V_max weights ───────────────────────────────────────────────────────
+    # ── 1/V_max weights (or FKP weights for DESI) ────────────────────────────
     weights = None
-    if mag is not None and ds['mag_limit'] is not None:
+    if ds.get('_fkp_weights') and mag is not None:
+        # DESI: use FKP weights directly (already survey-corrected)
+        weights = mag.copy()
+        weights = np.where(np.isfinite(weights) & (weights > 0), weights, 1.0)
+        if verbose:
+            print(f"  Using FKP weights from catalog: "
+                  f"median={np.median(weights):.3e}, max={weights.max():.3e}")
+    elif mag is not None and ds['mag_limit'] is not None:
         if verbose:
             print(f"  Computing 1/V_max weights (mag_limit={ds['mag_limit']})...")
         abs_mags = abs_magnitude(mag, z)
