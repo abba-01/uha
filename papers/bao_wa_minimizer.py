@@ -31,10 +31,31 @@ OM_PLANCK = 0.315
 W0_LCDM   = -1.0
 WA_LCDM   =  0.0
 
-# xi scale factor: r_s * H0 / c = 147.09 * 67.4 / 299792.458 = 0.03307
-# D_M/r_s = xi(z) / (r_s * H0/c) = xi(z) * c / (r_s * H0)
-# xi_scale = c / (r_s * H0) = 299792.458 / (147.09 * 67.4) = 30.226
-XI_SCALE = 299792.458 / (147.09 * 67.4)  # = 30.226
+# Sound horizon r_s is NOT a constant — it depends on Omega_m.
+# D_M/r_s = xi(z) * c / (r_s(Omega_m) * H0)
+# Fixing r_s at Planck value while varying Omega_m inverts the fit direction.
+#
+# Sound horizon scaling (Percival 2007 / calibrated to Planck 2018):
+#   r_s(Omega_m) = 147.09 * (Omega_m * h^2 / (0.315 * 0.674^2))^{-0.255}
+# At Omega_m=0.315, h=0.674: r_s = 147.09 Mpc (Planck fiducial, verified).
+#
+# The H0=67.4 factor in the denominator is the Planck fiducial H0.
+# D_M/r_s is H0-independent because D_M ∝ 1/H0 and r_s ∝ 1/H0.
+# Here we compute the ratio using H0-normalized quantities (xi, c/H0).
+
+H0_PLANCK = 67.4   # km/s/Mpc (Planck fiducial — cancels in D_M/r_s)
+RS_PLANCK  = 147.09  # Mpc at Omega_m=0.315 (Planck 2018)
+OM_H2_PLANCK = 0.315 * (H0_PLANCK/100)**2  # = 0.1430
+
+def sound_horizon(om, h=H0_PLANCK/100):
+    """
+    Sound horizon at drag epoch as function of Omega_m.
+    Normalized to Planck 2018: r_s = 147.09 Mpc at Omega_m=0.315, h=0.674.
+    Scaling from Percival (2007): r_s ∝ (Omega_m * h^2)^{-0.255}.
+    Omega_b h^2 held fixed at Planck value (0.0224).
+    """
+    om_h2 = om * h**2
+    return RS_PLANCK * (om_h2 / OM_H2_PLANCK)**(-0.255)
 
 def xi_integral(om, z, w0=-1.0, wa=0.0):
     """
@@ -51,8 +72,15 @@ def xi_integral(om, z, w0=-1.0, wa=0.0):
     return result
 
 def dm_rs_model(om, z, w0=-1.0, wa=0.0):
-    """D_M/r_s = xi(z) * c / (r_s * H0) — H0-independent in xi space."""
-    return xi_integral(om, z, w0, wa) * XI_SCALE
+    """
+    D_M/r_s = xi(z) * c / (r_s(Omega_m) * H0)
+    Both D_M and r_s are Omega_m-dependent — this ensures the ratio behaves
+    correctly when Omega_m is varied (fixing r_s inverts the fit direction).
+    H0-independence is preserved: D_M ∝ 1/H0 and r_s ∝ 1/H0 cancel.
+    """
+    rs = sound_horizon(om)
+    xi_scale = 299792.458 / (rs * H0_PLANCK)
+    return xi_integral(om, z, w0, wa) * xi_scale
 
 def chi2_1d(params):
     """Chi2 with Omega_m free, w0=-1, wa=0 (LCDM shape)."""
