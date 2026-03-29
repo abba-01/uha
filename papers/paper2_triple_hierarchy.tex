@@ -151,19 +151,49 @@ to $H(z)$ independent of transverse distances. With the full covariance matrix,
 adding $w_0w_a$ freedom to the DR2 $\Omega_m$-free fit yields $\Delta\chi^2 =
 13.13$ ($\chi^2/{\rm dof} = 0.79$, best-fit $\Omega_m = 0.333$, $w_0 =
 -0.710$, $w_a = -1.075$). For two additional parameters this is statistically
-significant ($p \approx 0.001$).
+significant ($p \approx 0.001$). The best-fit $w_0$ is in the same direction
+as the DESI Collaboration's combined BAO+CMB+SNe result ($w_0 \approx -0.73$;
+\citealt{DESI_2025_DR2}), providing a consistency check on the signal direction.
 
-The signal is concentrated at $z = 0.51$ and $z = 0.71$:
-\begin{itemize}
-    \item LRG1 ($z = 0.51$): $D_H/r_s$ is $-1.84\sigma$ below $\Lambda$CDM
-    \item LRG2 ($z = 0.71$): $D_H/r_s$ is $-2.21\sigma$ below $\Lambda$CDM
-\end{itemize}
-Both residuals are in the $D_H/r_s$ (line-of-sight) observable; the
-corresponding $D_M/r_s$ residuals at the same redshifts are not anomalous.
-This demonstrates that the dark energy signal in DR2 is carried by the $H(z)$
-information, which was entirely absent from the DR1 $D_M$-only analysis. The
-DR1 null result ($\Delta\chi^2 = 0.12$) was correct for that dataset; it was
-not a failure of the method but a consequence of the data scope.
+The largest single-bin $D_H/r_s$ residuals in the $\Omega_m$-free fit are
+at $z = 0.51$ (LRG1: $-1.84\sigma$) and $z = 0.71$ (LRG2: $-2.21\sigma$).
+To test whether these drive the $w_0w_a$ improvement, we perform a
+leave-one-out jackknife: we refit dropping each of the 13 measurements in turn
+and record the residual $\Delta\chi^2(w_0w_a)$. The result is shown in
+Table~\ref{tab:jackknife}. The signal is \emph{not} a two-bin artifact:
+removing any single measurement leaves $\Delta\chi^2 \geq 7.4$. The leading
+contributors are LRG2 (both $D_M$ and $D_H$; $z=0.71$), Ly$\alpha$ ($z=2.33$),
+and LRG3+ELG1 ($z=0.93$). The signal is distributed across $z = 0.5$--$2.3$
+in a pattern consistent with a genuine change in the expansion history rather
+than a single-tracer systematic.
+
+The $D_M$-only data carry no dark energy sensitivity at this precision; the
+$w_0w_a$ improvement in the DR1 $D_M$-only analysis was $\Delta\chi^2 = 0.12$.
+The emergence of $\Delta\chi^2 = 13.13$ in DR2 is a direct consequence of the
+added $H(z)$ information from $D_H/r_s$, not a change in the underlying data
+or a methodological difference.
+
+\begin{table}[h]
+\centering
+\caption{Leave-one-out jackknife on $\Delta\chi^2(w_0w_a)$. Each row gives
+$\Delta\chi^2$ when the listed measurement is excluded. Baseline (all 13
+bins): $\Delta\chi^2 = 13.13$. No single bin drives the signal; removing any
+one leaves $\Delta\chi^2 \geq 7.4$.}
+\label{tab:jackknife}
+\begin{tabular}{llcc}
+\toprule
+Sample & Observable & $z$ & $\Delta\chi^2$ \\
+\midrule
+(all 13 bins)   & ---      & ---   & 13.13 \\
+LRG2            & $D_H/r_s$& 0.706 & \phantom{0}7.41 \\
+Ly$\alpha$      & $D_H/r_s$& 2.330 & \phantom{0}8.94 \\
+LRG2            & $D_M/r_s$& 0.706 & \phantom{0}8.87 \\
+LRG3+ELG1      & $D_M/r_s$& 0.934 & \phantom{0}9.38 \\
+LRG1            & $D_H/r_s$& 0.510 & 10.98 \\
+ELG2            & $D_M/r_s$& 1.321 & 11.09 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{table}[h]
 \centering
@@ -259,8 +289,14 @@ errors; the DR2 analysis uses the full covariance matrix and both $D_M$ and
 $D_H$ observables. The DR1 $\Omega_m = 0.268$ and DR2 $\Omega_m = 0.290$
 differ partly due to this methodological difference, not a physical discrepancy.
 (2)~The $r_s(\Omega_m)$ scaling from \citealt{Percival2007} is an
-approximation; a more accurate treatment would vary both $\Omega_b h^2$ and
-$\Omega_m h^2$ jointly.
+approximation. A sensitivity test varying the power-law exponent $\alpha$ from
+$-0.240$ to $-0.270$ (bracketing the Percival value of $-0.255$) yields
+$\Omega_m = 0.288$--$0.294$, a spread of $0.006$ comparable to the DESI
+measurement uncertainty of $0.007$. The qualitative conclusion ($\Omega_m <
+0.315$) is robust across all prescriptions tested, including a calibrated
+Eisenstein \& Hu (1998) approximation. A more accurate treatment would vary
+both $\Omega_b h^2$ and $\Omega_m h^2$ jointly and is expected to bring the
+central value into closer agreement with the DESI DR2 headline.
 (3)~The DR2 $\Delta\chi^2 = 13.13$ from $w_0w_a$ is statistically significant
 within this fit, but the DR2 covariance matrix may carry systematic
 uncertainties not fully captured here. We report this as a signal for further
