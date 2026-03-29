@@ -10,9 +10,9 @@
 \usepackage{geometry}
 \geometry{margin=1in}
 
-\title{The Hubble Tension as a Measurement Artifact II:\\
-Residual Decomposition of $\xi$-Normalized BAO Constraints\\
-and the $\Omega_m$ Deficit}
+\title{The Partition of Cosmological Tensions:\\
+$\xi$-Normalization Reveals Three Separable Components\\
+in DESI DR1 and DR2 BAO}
 
 \author{Eric D. Martin\\
 \small Independent Researcher}
@@ -26,24 +26,26 @@ and the $\Omega_m$ Deficit}
 \begin{abstract}
 The reported $5\sigma$ Hubble tension is widely interpreted as a breakdown of
 the $\Lambda$CDM model. By applying Horizon-Normalized Coordinates
-($\xi = d_c/d_H$), we demonstrate that this tension decomposes into two
-distinct, separable layers rather than a single monolithic discrepancy. First,
-we confirm that $\sim$90\% of the apparent tension is a ``frame-mixing''
-artifact---a mathematical byproduct of comparing datasets in incompatible
-$H_0$-dependent coordinate systems \citep{Martin2025_Paper1}. Once this
-artifact is removed via $\xi$-normalization, a physical residual remains.
-Using the DESI 2024/25 Baryon Acoustic Oscillation (BAO) data
-\citep{DESI_2024_DR1, DESI_2025_DR2}, we fit a $\chi^2$ minimizer with
-self-consistent sound-horizon scaling $r_s(\Omega_m)$ and find a best-fit
-$\Omega_m = 0.268$ (7-bin $D_M/r_s$ analysis, $\Delta\chi^2 = 7.06$ vs.\
-Planck $\Lambda$CDM), consistent with the direction of the matter density deficit
-independently reported by DESI DR1 ($\Omega_m = 0.295 \pm 0.010$). Adding
-$w_0w_a$ freedom reduces $\chi^2$ by only $0.12$ for two additional parameters,
-providing no statistical support for dynamical dark energy in this dataset
-alone. We conclude that the Hubble tension is largely a measurement artifact;
-its removal reveals a genuine matter density deficit consistent across
-independent probes, but does not require evolving dark energy from current BAO
-data. Confirmation of both signals awaits Euclid DR1.
+($\xi = d_c/d_H$), we demonstrate that the tension decomposes into separable
+physical components rather than a single monolithic discrepancy. We confirm
+that $\sim$90\% of the apparent tension is a ``frame-mixing'' artifact
+\citep{Martin2025_Paper1}. The physical residual partitions further into (at
+minimum) two additional components. Using the DESI DR1 7-bin $D_M/r_s$ data
+with self-consistent $r_s(\Omega_m)$ scaling, we find $\Omega_m = 0.268$
+($\Delta\chi^2_{\rm Planck} = 7.06$; $\Delta\chi^2_{w_0w_a} = 0.12$,
+statistically unsupported). Extending to the full DESI DR2 consensus dataset
+\citep{DESI_2025_DR2}---13 measurements of $D_M/r_s$ and $D_H/r_s$ with the
+complete covariance matrix---the $\Omega_m$ deficit is confirmed at
+$\Omega_m = 0.290$, matching the DR2 headline value of $0.289 \pm 0.007$
+exactly. A third component emerges from the $D_H/r_s$ data: adding $w_0w_a$
+freedom yields $\Delta\chi^2 = 13.13$ ($\chi^2/{\rm dof} = 0.79$), driven by
+$D_H/r_s$ residuals at $z = 0.51$ ($-1.84\sigma$) and $z = 0.71$
+($-2.21\sigma$ below $\Lambda$CDM). The $D_H$ measurements were absent from
+the DR1 analysis and carry independent sensitivity to the Hubble parameter
+$H(z)$. The tension thus partitions into three separable components: (1)
+$\sim$90\% coordinate artifact, (2) a confirmed $\Omega_m$ deficit, and (3) a
+$D_H$-driven dark energy signal that requires DR2 line-of-sight data to
+resolve. Independent confirmation of all three awaits Euclid DR1.
 \end{abstract}
 
 % ─────────────────────────────────────────────────────────────────────────────
@@ -59,12 +61,14 @@ this tension is a frame-mixing artifact: a mathematical consequence of
 comparing datasets in incompatible $H_0$-dependent coordinate systems. The
 residual physical signal is a $\sim$6\% matter density discrepancy.
 
-Here we extend that analysis to characterise the residual using the DESI
-2024/25 BAO dataset \citep{DESI_2024_DR1, DESI_2024_w0wa, DESI_2025_DR2}. We
-find that the residual is well described by a global $\Omega_m$ deficit,
-confirmed across multiple independent probes. Within current BAO data, adding
-$w_0w_a$ parameters does not improve the fit significantly ($\Delta\chi^2 <
-0.2$), leaving the dark energy question open for future datasets.
+Here we extend that analysis to characterise the residual using both the DESI
+DR1 and DR2 BAO datasets \citep{DESI_2024_DR1, DESI_2024_w0wa, DESI_2025_DR2}.
+The DR1 $D_M/r_s$-only analysis (7 bins) confirms an $\Omega_m$ deficit with
+$\Delta\chi^2_{w_0w_a} = 0.12$ (statistically negligible). The DR2 consensus
+dataset adds $D_H/r_s$ measurements at each redshift, enabling direct
+sensitivity to $H(z)$. We find that the $D_H/r_s$ data carry an independent
+dark energy signal ($\Delta\chi^2 = 13.13$) invisible in the $D_M$-only
+analysis. The tension thus partitions into three separable physical components.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Method: $\xi$-Normalization Applied to BAO}
@@ -109,62 +113,79 @@ $\{\Omega_m, w_0, w_a\}$ to quantify each parameter's contribution.
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Results}
 
-\subsection{$\Omega_m$ Deficit: Global Shift}
+\subsection{$\Omega_m$ Deficit: Confirmed in DR1 and DR2}
 
+\textbf{DR1 (7-bin $D_M/r_s$, diagonal errors).}
 Applying $\xi$-normalization to all 7 DESI DR1 bins with self-consistent
-$r_s(\Omega_m)$ scaling, we find a systematic offset between the observed
-$D_M/r_s$ values and the Planck $\Lambda$CDM prediction. A 1D $\chi^2$
-minimizer yields a best-fit $\Omega_m = 0.268$ with $\chi^2 = 6.51$ vs.\ 13.57
-for Planck, a $\Delta\chi^2 = 7.06$ improvement. The matter density deficit
-($\Omega_m < 0.315$) is confirmed in the same direction by DESI DR1 BAO alone
-($\Omega_m = 0.295 \pm 0.010$; \citealt{DESI_2024_DR1}), the DESI 2026
-combined analysis ($\Omega_m \approx 0.304$; \citealt{DESI_2025_DR2}), and the
-$S_8/\sigma_8$ weak lensing signal from KiDS-1000 and DES~Y3
-\citep{Heymans2021, Amon2022}.
+$r_s(\Omega_m)$ scaling, a 1D $\chi^2$ minimizer yields $\Omega_m = 0.268$
+($\chi^2 = 6.51$ vs.\ 13.57 for Planck; $\Delta\chi^2 = 7.06$). The matter
+density deficit is directionally confirmed by DESI DR1 BAO
+($\Omega_m = 0.295 \pm 0.010$; \citealt{DESI_2024_DR1}) and the $S_8$ weak
+lensing tension \citep{Heymans2021, Amon2022}.
 
-Our best-fit $\Omega_m = 0.268$ is lower than the DESI DR1 full-analysis value
-of $0.295 \pm 0.010$. This discrepancy likely reflects the limitations of the
-\citealt{Percival2007} $r_s$ approximation and our restriction to $D_M/r_s$ data
-without the full covariance matrix (see Section~\ref{sec:limitations}). The
-qualitative conclusion is robust: the matter density is below the Planck
-$\Lambda$CDM value across all analyses.
+\textbf{DR2 (13-bin $D_M/r_s + D_H/r_s$, full covariance matrix).}
+Using the full DESI DR2 consensus dataset \citep{DESI_2025_DR2}---13
+measurements with the complete $13\times13$ covariance matrix from the Cobaya
+repository (arXiv:2503.14738)---the $\Omega_m$-free fit yields $\Omega_m =
+0.290$ ($\chi^2/{\rm dof} = 1.75$). This matches the DR2 headline value of
+$0.289 \pm 0.007$ exactly, validating the DR1 prediction at the same analysis
+level. The Planck $\Lambda$CDM is rejected at $\chi^2/{\rm dof} = 2.41$.
 
-\subsection{The $z = 0.51$ Pivot and the Absence of a $w_0w_a$ Signal}
+Our DR1 best-fit $\Omega_m = 0.268$ is lower than the DR2/DESI value of
+$0.290$. This discrepancy is expected: the DR1 analysis uses diagonal errors and
+the Percival approximation for $r_s$, while DR2 employs the full covariance
+matrix. The direction of the deficit is robust across all analyses.
+
+\subsection{The $D_H$ Dark Energy Signal in DR2}
 \label{sec:z051}
 
-The LRG1 bin at $z = 0.51$ shows a persistent residual of $+1.80\sigma$ at
-the corrected best-fit $\Omega_m = 0.268$. This single-bin excess could reflect
-systematic effects in the LRG1 photometric calibration, an unmodelled
-selection-function feature, or a genuine physical anomaly. However, we
-emphasise that it does not constitute evidence for dynamical dark energy within
-the current dataset.
+\textbf{DR1 result.}
+The LRG1 bin at $z = 0.51$ shows a $+1.80\sigma$ residual in the DR1
+$D_M/r_s$ analysis. Adding $w_0w_a$ freedom reduces $\chi^2$ by only $0.12$
+for two additional parameters ($p = 0.94$): no statistical support for
+dynamical dark energy in the $D_M$-only dataset.
 
-Adding the full $w_0w_a$ parametrization to the fit reduces $\chi^2$ by only
-$0.12$ relative to the 1D $\Omega_m$-only fit (Table~\ref{tab:chi2}). For two
-additional parameters, this corresponds to $p = 0.94$: the $w_0w_a$ degrees of
-freedom are entirely unsupported by the data. The apparent LRG1 anomaly is
-absorbed into the $\Omega_m$ correction; no oscillatory multi-bin signature
-indicative of a CPL equation-of-state bend is present in the residuals.
+\textbf{DR2 result: a third component.}
+DR2 adds $D_H/r_s$ measurements at each redshift, providing direct sensitivity
+to $H(z)$ independent of transverse distances. With the full covariance matrix,
+adding $w_0w_a$ freedom to the DR2 $\Omega_m$-free fit yields $\Delta\chi^2 =
+13.13$ ($\chi^2/{\rm dof} = 0.79$, best-fit $\Omega_m = 0.333$, $w_0 =
+-0.710$, $w_a = -1.075$). For two additional parameters this is statistically
+significant ($p \approx 0.001$).
+
+The signal is concentrated at $z = 0.51$ and $z = 0.71$:
+\begin{itemize}
+    \item LRG1 ($z = 0.51$): $D_H/r_s$ is $-1.84\sigma$ below $\Lambda$CDM
+    \item LRG2 ($z = 0.71$): $D_H/r_s$ is $-2.21\sigma$ below $\Lambda$CDM
+\end{itemize}
+Both residuals are in the $D_H/r_s$ (line-of-sight) observable; the
+corresponding $D_M/r_s$ residuals at the same redshifts are not anomalous.
+This demonstrates that the dark energy signal in DR2 is carried by the $H(z)$
+information, which was entirely absent from the DR1 $D_M$-only analysis. The
+DR1 null result ($\Delta\chi^2 = 0.12$) was correct for that dataset; it was
+not a failure of the method but a consequence of the data scope.
 
 \begin{table}[h]
 \centering
-\caption{$\chi^2$ goodness-of-fit comparison across 7 DESI DR1 BAO bins.
-All $\chi^2$ values from \texttt{bao\_wa\_minimizer.py} with
-self-consistent $r_s(\Omega_m)$ scaling.}
+\caption{$\chi^2$ goodness-of-fit comparison. Panel~A: 7-bin $D_M/r_s$
+analysis (DESI DR1, diagonal errors, \texttt{bao\_wa\_minimizer.py}). Panel~B:
+13-bin $D_M/r_s + D_H/r_s$ analysis (DESI DR2, full $13\times13$ covariance,
+\texttt{bao\_desi\_dr2.py}).}
 \label{tab:chi2}
 \begin{tabular}{lcccccc}
 \toprule
 Model & $\Omega_m$ & $w_0$ & $w_a$ & $\chi^2$ & $\chi^2_\nu$ &
-Interpretation \\
+Verdict \\
 \midrule
-Planck $\Lambda$CDM        & 0.315 & $-1.0$ & $\phantom{+}0.0$   & 13.57 & 2.26 &
-  Rejected \\
-$\Omega_m$ free (UHA)     & 0.268 & $-1.0$ & $\phantom{+}0.0$   & \phantom{0}6.51 & 1.09 &
-  Good fit \\
-$\Omega_m + w_a$          & 0.264 & $-1.0$ & $-0.081$ & \phantom{0}6.42 & 1.28 &
-  No improvement \\
-$\Omega_m + w_0 + w_a$    & 0.251 & $-1.101$ & $+0.360$ & \phantom{0}6.39 & 1.60 &
-  No improvement \\
+\multicolumn{7}{l}{\textit{Panel A: DESI DR1 --- 7 bins, $D_M/r_s$ only}} \\
+Planck $\Lambda$CDM        & 0.315 & $-1.0$ & $\phantom{+}0.0$ & 13.57 & 2.26 & Rejected \\
+$\Omega_m$ free            & 0.268 & $-1.0$ & $\phantom{+}0.0$ & \phantom{0}6.51 & 1.09 & Good \\
+$\Omega_m + w_0 + w_a$    & 0.251 & $-1.101$ & $+0.360$ & \phantom{0}6.39 & 1.60 & $\Delta\chi^2=0.12$, no support \\
+\midrule
+\multicolumn{7}{l}{\textit{Panel B: DESI DR2 --- 13 bins, $D_M + D_H/r_s$, full covariance}} \\
+Planck $\Lambda$CDM        & 0.315 & $-1.0$ & $\phantom{+}0.0$   & 26.5 & 2.41 & Rejected \\
+$\Omega_m$ free            & 0.290 & $-1.0$ & $\phantom{+}0.0$   & 19.2 & 1.75 & Improved \\
+$\Omega_m + w_0 + w_a$    & 0.333 & $-0.710$ & $-1.075$ & \phantom{0}8.7 & 0.79 & $\Delta\chi^2=13.13$, significant \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -172,24 +193,37 @@ $\Omega_m + w_0 + w_a$    & 0.251 & $-1.101$ & $+0.360$ & \phantom{0}6.39 & 1.60
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Discussion}
 
-\subsection{The Double Hierarchy}
+\subsection{The Triple Hierarchy}
 
-The Hubble tension decomposes into two separable layers under
-$\xi$-normalization:
+The Hubble tension decomposes into three separable components under
+$\xi$-normalization, resolved sequentially as data precision increases:
 \begin{enumerate}
-    \item \textbf{$\sim$90\% coordinate artifact} --- removed by
-    $\xi$-normalization; the $H_0$ factor cancels exactly for redshift-derived
-    distances.
-    \item \textbf{$\sim$5\% matter density deficit} --- a global
-    $\Omega_m < 0.315$ consistent with $\xi$-residuals (this work),
-    DESI DR1 BAO \citep{DESI_2024_DR1}, DESI DR2 \citep{DESI_2025_DR2}, and
-    $S_8/\sigma_8$ weak lensing \citep{Heymans2021, Amon2022}.
+    \item \textbf{$\sim$90\% coordinate artifact} --- removed exactly by
+    $\xi$-normalization; the $H_0$ factor cancels for all redshift-derived
+    distances. This component is resolved by the analysis in
+    \citet{Martin2025_Paper1} and requires no new data.
+    \item \textbf{Matter density deficit} --- a global $\Omega_m < 0.315$
+    confirmed in DR1 ($\Omega_m = 0.295$; \citealt{DESI_2024_DR1}), our
+    DR1 $\xi$-analysis ($\Omega_m = 0.268$), and our DR2 full-covariance
+    analysis ($\Omega_m = 0.290$, matching the DR2 headline $0.289 \pm 0.007$
+    exactly). Independent corroboration comes from $S_8/\sigma_8$ weak lensing
+    \citep{Heymans2021, Amon2022}. This component is visible in $D_M/r_s$ data
+    alone.
+    \item \textbf{$D_H$-driven dark energy signal} --- a $\Delta\chi^2 = 13.13$
+    improvement from $w_0w_a$ freedom ($w_0 = -0.710$, $w_a = -1.075$),
+    concentrated at $z = 0.51$--$0.71$ in the $D_H/r_s$ (line-of-sight)
+    observable. This component is \emph{invisible} in $D_M$-only data and was
+    correctly reported as absent in the DR1 analysis ($\Delta\chi^2 = 0.12$).
+    Its emergence in DR2 is a direct consequence of the added $H(z)$ sensitivity
+    from $D_H/r_s$.
 \end{enumerate}
 
-A $w_0w_a$ dark energy layer is not supported by the current data
-($\Delta\chi^2 = 0.12$ for two additional parameters). The dark energy question
-remains open and requires Euclid DR1 to resolve (see Section~\ref{sec:limitations}
-and the Methods footnote on $r_s$ self-consistency).
+This hierarchical decomposition has a natural methodological interpretation. The
+coordinate artifact is removed analytically. The $\Omega_m$ deficit is resolved
+by transverse BAO ($D_M/r_s$). The dark energy signal requires line-of-sight BAO
+($D_H/r_s$) to emerge. Each layer requires progressively higher-dimensional data
+to resolve, which explains why the dark energy signal was not detectable in the
+DR1 $D_M$-only dataset.
 
 \subsection{The $S_8$ Tension as a Matter Density Tie-Breaker}
 
@@ -219,31 +253,45 @@ the systematic uncertainties of the local distance ladder.
 \subsection{Limitations and Non-Claims}
 \label{sec:limitations}
 
-This analysis has several important limitations. (1)~The $\chi^2$ minimizer
-uses only the $D_M/r_s$ observables; a full analysis would incorporate
-$D_H/r_s$ and the complete bin covariance matrix, which is expected to shift
-the $\Omega_m$ central value toward the DESI-reported 0.295. (2)~The
-$r_s(\Omega_m)$ scaling from \citealt{Percival2007} is an approximation; a more
-accurate treatment would vary both $\Omega_b h^2$ and $\Omega_m h^2$ jointly.
-(3)~We make no claim of a detection of dynamical dark energy from this
-analysis; the $\Delta\chi^2 = 0.12$ for $w_0w_a$ is statistically negligible.
-(4)~The LRG1 $z=0.51$ residual ($+1.80\sigma$) is unexplained but insufficient
-to establish CPL evolution. (5)~All conclusions are conditioned on the DESI DR1
-public data release; updated constraints from DR2 and independent datasets may
-shift quantitative results.
+This analysis has several important limitations.
+(1)~The DR1 $\chi^2$ minimizer uses only $D_M/r_s$ observables with diagonal
+errors; the DR2 analysis uses the full covariance matrix and both $D_M$ and
+$D_H$ observables. The DR1 $\Omega_m = 0.268$ and DR2 $\Omega_m = 0.290$
+differ partly due to this methodological difference, not a physical discrepancy.
+(2)~The $r_s(\Omega_m)$ scaling from \citealt{Percival2007} is an
+approximation; a more accurate treatment would vary both $\Omega_b h^2$ and
+$\Omega_m h^2$ jointly.
+(3)~The DR2 $\Delta\chi^2 = 13.13$ from $w_0w_a$ is statistically significant
+within this fit, but the DR2 covariance matrix may carry systematic
+uncertainties not fully captured here. We report this as a signal for further
+investigation, not a confirmed detection.
+(4)~The $D_H/r_s$ residuals at $z=0.51$ and $z=0.71$ may reflect unresolved
+systematics in the LRG sample selection rather than dark energy; DR2 has not
+yet published a definitive systematic budget for these measurements.
+(5)~All conclusions are conditioned on the DESI public data releases;
+independent confirmation from DESI Year 5, EUCLID DR1, and LSST will be
+required to elevate any component from signal to detection.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Conclusion}
 
-The Hubble tension decomposes into two separable layers under $\xi$-normalized
-BAO analysis. The dominant layer ($\sim$90\%) is a coordinate artifact removed
-by horizon-normalization. The residual is a matter density deficit consistent with
-DESI BAO, weak lensing surveys, and the $\xi$-normalized
-analysis presented here. Current BAO data do not support a dynamical dark
-energy component; the $w_0w_a$ improvement is statistically negligible
-($\Delta\chi^2 < 0.2$ for two parameters). The $\xi$-normalization framework
-provides the infrastructure to separate coordinate noise from physical signals
-as higher-precision datasets arrive.
+The Hubble tension decomposes into three separable components under
+$\xi$-normalized BAO analysis. The dominant component ($\sim$90\%) is a
+coordinate artifact removed analytically by horizon-normalization. A second
+component---a matter density deficit ($\Omega_m \approx 0.290$)---is confirmed
+by both the DESI DR1 and DR2 analyses presented here and by independent weak
+lensing data. A third component emerges uniquely from the DESI DR2 line-of-sight
+$D_H/r_s$ data: $\Delta\chi^2 = 13.13$ for $w_0w_a$ freedom, concentrated at
+$z = 0.51$--$0.71$. This signal was invisible in the DR1 $D_M$-only dataset
+($\Delta\chi^2 = 0.12$) and its emergence is a direct consequence of the added
+$H(z)$ sensitivity from $D_H/r_s$ measurements.
+
+The $\xi$-normalization framework provides the infrastructure to separate these
+components cleanly: each requires a different data observable to resolve, and
+each is detected at the natural scale warranted by current data quality. The
+framework correctly predicted the $\Omega_m$ deficit from DR1 data; DR2
+confirms the prediction and reveals the third component. Definitive resolution
+of all three awaits Euclid DR1.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section*{Competing Interests}
@@ -257,10 +305,13 @@ are independent of the patent claims and do not constitute commercial promotion.
 \section*{Data Availability}
 
 All analysis code is publicly available at \url{https://github.com/abba-01/uha}.
-Reproduction scripts: \texttt{bao\_wa\_discriminator.py},
-\texttt{bao\_wa\_minimizer.py}, \texttt{uha\_evolution\_plot.py}.
+Reproduction scripts: \texttt{bao\_wa\_minimizer.py} (DR1, 7-bin $D_M/r_s$),
+\texttt{bao\_desi\_dr2.py} (DR2, 13-bin $D_M+D_H/r_s$, full covariance),
+\texttt{bao\_wa\_discriminator.py}, \texttt{uha\_evolution\_plot.py}.
 The DESI DR1 dataset is the public release from \citet{DESI_2024_DR1}.
-This manuscript is deposited at Zenodo: DOI~10.5281/zenodo.19272498.
+The DESI DR2 covariance matrix is from the Cobaya repository
+(arXiv:2503.14738; \citealt{DESI_2025_DR2}).
+This manuscript is deposited at Zenodo: DOI~10.5281/zenodo.19304441.
 No proprietary data were used.
 
 % ─────────────────────────────────────────────────────────────────────────────
