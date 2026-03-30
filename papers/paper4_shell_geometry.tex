@@ -92,7 +92,7 @@ This paper presents:
 \end{enumerate}
 
 Pre-registration DOI: 10.5281/zenodo.19322304.
-Patent pending: US~63/902,536 (CIP filed 2026-03-28, Claims 41--56).
+Patent pending: US~63/902,536 (CIP draft complete 2026-03-28, Claims 41--59; not yet filed with USPTO).
 
 %% ─────────────────────────────────────────────────────────────────────────────
 \section{Coordinate System}
@@ -411,8 +411,9 @@ Pre-registration: DOI 10.5281/zenodo.19322304.
 
 \section*{Patent Notice}
 
-US Provisional Patent 63/902,536 (filed 2025-10-21). CIP filed 2026-03-28,
-Claims 41--56. Non-provisional deadline: 2026-10-21.
+US Provisional Patent 63/902,536 (filed 2025-10-21). CIP draft complete
+2026-03-28, Claims 41--59; not yet filed with USPTO.
+Non-provisional deadline: 2026-10-21.
 
 %% ─────────────────────────────────────────────────────────────────────────────
 \begin{thebibliography}{}
@@ -459,8 +460,17 @@ Hubble radius at scale factor $a$) and is bounded $s_1 \leq 1$ by
 construction. This is distinct from the papers' coordinate
 $\xi = \dc/\dH$, which is observer-frame comoving distance normalized
 to the present-day Hubble distance and can exceed unity at $z \gtrsim 2$.
-These quantities should not be conflated. The CIP (Claims 41--56, filed
-2026-03-28) adds log-normalized encoding, adaptive bit depth, and
-mode-selection logic that applies to both regimes.
+These quantities should not be conflated. The CIP (Claims 41--59, draft
+complete 2026-03-28, not yet filed with USPTO) adds log-normalized
+encoding, adaptive bit depth, and mode-selection logic that applies to
+both regimes. CIP Claim~55 further formalizes the ξ output within the
+UHA address framework as $\xi = d_c / R_H(a)$, where $R_H(a)$ is
+recovered from the CosmoID stored in the spatial address, enabling
+self-decoding frame-invariance. The observer-frame paper coordinate
+$\xi = \dc/\dH$ is the present-epoch specialization of this quantity
+($a = 1$, $R_H(1) = \dH$). Claims 57--59 add an independent
+cross-survey comparison method: two datasets are directly comparable
+in $\xi$-space when their CosmoIDs are identical or related by a
+defined Gateway Transform, without H$_0$ alignment.
 
 \end{document}
