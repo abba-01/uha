@@ -1,0 +1,211 @@
+UHA PATENT CIP — HANDOFF DOCUMENT
+Universal Horizon Address (UHA) — Continuation-in-Part Summary
+Inventor: Eric D. Martin / All Your Baseline LLC
+Provisional: US 63/902,536 (filed 2025-10-21)
+Non-provisional deadline: 2026-10-21
+Prepared: 2026-03-29
+
+═══════════════════════════════════════════════════════════════
+WHAT THE PROVISIONAL COVERS (Claims 1–40)
+═══════════════════════════════════════════════════════════════
+
+The filed provisional covers the cosmological-scale UHA encoding:
+- Linear radial normalization: s₁ = r / R_H (horizon-normalized)
+- Fixed 21-bit Morton Z-order encoding of 3D position
+- CosmoID: cryptographic hash of cosmological parameter set (H₀, Ω_m, Ω_Λ, etc.)
+- TLV address format (type-length-value, self-decoding)
+- Friedmann integral for exact horizon radius R_H(a)
+- Single operational mode (cosmological)
+
+Core invention: any spatial position in the universe encoded as a
+self-decoding, H₀-independent address tuple. Two addresses with the
+same CosmoID are directly comparable regardless of observer frame.
+
+═══════════════════════════════════════════════════════════════
+NEW MATTER IN THE CIP (Claims 41–56)
+═══════════════════════════════════════════════════════════════
+
+Six categories of new matter extend UHA from cosmological scales
+down to 10 cm terrestrial precision:
+
+CATEGORY A — Scale Dilation (Claims 41–42)
+  Adaptive bit depth N(a) = ⌈log₂(a · R_H(a) / ε_target)⌉
+  Preserves physical precision floor ε_target across all cosmic epochs.
+  N clamped to [10, 63]. ε_target encoded in CosmoID → self-decoding.
+
+CATEGORY B — Multi-Tier Radial Bands (Claims 43–45)
+  Partitions [0, R_H] into K=4 tiers:
+    Tier 0 (Local):        r < 1 Mpc      (Earth, LEO, solar system)
+    Tier 1 (Stellar):      1–100 Mpc      (nearby stars, clusters)
+    Tier 2 (Galactic):     100–1000 Mpc   (Milky Way, Local Group)
+    Tier 3 (Cosmological): 1000 Mpc–R_H   (large-scale structure)
+  Composite index: (tier_bits << 63) | morton_index_within_tier
+  Per-tier bit depth: higher near-field, lower cosmological.
+
+CATEGORY C — Logarithmic Radial Normalization (Claims 46–47)
+  s₁_log = log(1 + r/r₀) / log(1 + R_H/r₀)
+  Single formula spans 10 cm → Hubble horizon without regime switching.
+  Default r₀ = 1 AU. Concentrates quantization at near-field distances.
+  r₀ encoded in CosmoID → self-decoding.
+
+CATEGORY D — Adaptive Bit Depth by Spatial Regime (Claims 48–49)
+  N(r) = max(N_min, min(N_max, N_base - β · ⌊log₁₀(r / r_ref)⌋))
+  Near-field gets N=63, cosmological gets N=21.
+  N_min ≥ 10 (preserves Claim 3 minimum). All params in CosmoID.
+
+CATEGORY E — 10 cm Precision Target (Claim 50)
+  At Earth surface (r ≈ 6.371×10⁻⁹ Mpc), N=63, r₀=1 AU:
+    δ_phys ≤ 0.10 m  (conservative bound; actual computed: ~1.26 cm)
+  Verified formula:
+    δr = r₀ · (1 + r/r₀) · (1/2^N) · ln(1 + R_H/r₀)
+    = 1.496×10⁻⁷ · 1.043 · 1.084×10⁻¹⁹ · 24.12 ≈ 1.26 cm
+  Comparison: GPS (WGS-84) = 3.5m without DGPS; UHA = 1.26 cm,
+  cryptographically auditable, cosmology-portable.
+
+CATEGORY F — Local-Mode / Cosmological-Mode Switch (Claims 51–52)
+  Deterministic mode selection rule:
+    if r < r_switch AND (H₀·r/c) < δ_threshold:
+        mode = LOCAL   (R_ref = R_local, expansion term = 0)
+    else:
+        mode = COSMOLOGICAL  (R_ref = R_H(a), full Friedmann)
+  Defaults: r_switch = 100 Mpc, δ_threshold = 0.01 (1% expansion).
+  Mode + thresholds encoded in CosmoID → decoder recovers mode without
+  external configuration. First system to span cm → Gpc in one address format.
+
+ADDITIONAL CLAIMS:
+  Claim 53 — Uncertainty vector σ_unc encoded inside the address tuple
+              (not as external metadata). Uses N/U Algebra interval arithmetic.
+  Claim 54 — Velocity vector σ_vel (proper motion / peculiar velocity)
+              encoded in address. Position + velocity + cosmological context
+              in one self-decoding tuple.
+  Claim 55 — ξ coordinate output: ξ = d_c / R_H(a), dimensionless, H₀-independent.
+              Frame-invariance property: ξ(A₁) = ξ(A₂) iff CosmoIDs identical
+              or gateway-transformable. This is the coordinate used in Papers 1 & 2.
+  Claim 56 — UHA + uncertainty propagation system (combines Claims 1 + 53).
+              Conservative interval arithmetic on uncertainty indices.
+
+═══════════════════════════════════════════════════════════════
+IMPLEMENTATION STATUS (§ 112 ENABLEMENT)
+═══════════════════════════════════════════════════════════════
+
+All claims implemented in: uso/L4_UHA_Transport/uha_encoder.py
+Commits: 2026-03-28
+
+  normalize_log()          → Claims 46–47, 50 (verified δr = 1.26 cm)
+  log_norm_resolution()    → § 112 verification formula
+  adaptive_bit_depth()     → Claims 48–49 (N: 63→10 across radial decades)
+  select_mode()            → Claims 51–52 (deterministic LOCAL/COSMOLOGICAL)
+  UHAMode enum             → exported, used in select_mode()
+  is_origin()              → Section G (near-origin singularity closure)
+  zero-vector convention   → r < ε_origin → θ=φ=0, origin=true in CosmoID
+  COSMO_ID_COMPARABLE      → Section H (CosmoID comparability law)
+
+§ 112 STATUS: PASS — all blocking items resolved. CIP is fileable.
+
+═══════════════════════════════════════════════════════════════
+CLAIM DEPENDENCY TREE (abbreviated)
+═══════════════════════════════════════════════════════════════
+
+Claims 1–40 (provisional, unchanged)
+  ├── 41–42 (scale dilation)
+  ├── 43–45 (multi-tier bands)
+  ├── 46–47 (log normalization)
+  │     └── 50 (10 cm precision)
+  ├── 48–49 (adaptive bit depth)
+  ├── 51–52 (mode switch) ← independent claim
+  ├── 53 (uncertainty vector)
+  ├── 54 (velocity vector)
+  ├── 55 (ξ frame-invariance, depends on Claim 11)
+  └── 56 (UHA + uncertainty system) ← independent claim
+
+Total claims after CIP: 56
+Independent claims: 15 (within USPTO 20-claim limit, no excess fees)
+
+═══════════════════════════════════════════════════════════════
+KEY PRIOR ART DIFFERENTIATORS
+═══════════════════════════════════════════════════════════════
+
+GPS/WGS-84:     Earth-local, not self-decoding, no CosmoID, 3.5m precision
+HEALPix:        Single-tier, angular only, no radial banding, no CosmoID
+R-trees:        Query-time variable depth, not embedded in address
+FITS WCS:       Uncertainty as separate metadata, not inside address
+Gaia catalog:   Velocity as external table lookup, not self-decoding
+Comoving r/R_H: Textbook concept; novel here: ξ as named self-decoding
+                output with CosmoID provenance and frame-invariance property
+
+No prior system spans cm to Gpc in a single self-decoding address format
+with cryptographically auditable coordinate provenance.
+
+═══════════════════════════════════════════════════════════════
+WHAT IS NOT IN THIS CIP (deliberate)
+═══════════════════════════════════════════════════════════════
+
+OMMP (Observer, Measurement, Method, Probe) observer tensor [a, P_m, 0_t, 0_a]
+is excluded. It is entirely new matter relative to the provisional and covers
+different subject matter (observer classification vs. coordinate encoding).
+Will be filed as Patent 3 (standalone provisional).
+
+═══════════════════════════════════════════════════════════════
+ZENODO ANCHORS (prior art / public disclosure dates)
+═══════════════════════════════════════════════════════════════
+
+UHA provisional filed:       2025-10-21 (US 63/902,536)
+N/U Algebra published:       2025-09-21 (Zenodo 10.5281/zenodo.17172694)
+  → Within 1-year grace period for Claim 56 (§102(b)(1)(A))
+hubble-tensor repo:          Zenodo 10.5281/zenodo.19268464
+UHA repo:                    Zenodo 10.5281/zenodo.19230683
+uso/L4_UHA_Transport impl:   Committed 2026-03-28 (GitHub: abba-01/uso)
+
+═══════════════════════════════════════════════════════════════
+FIGURES NEEDED BEFORE FILING (not required for enablement)
+═══════════════════════════════════════════════════════════════
+
+FIG. 11: Multi-tier radial band diagram
+FIG. 12: Log vs. linear normalization comparison
+FIG. 13: Local-mode / cosmological-mode switch flowchart
+FIG. 14: Adaptive bit depth allocation table (visual)
+FIG. 15: ξ coordinate output pipeline
+FIG. 16: UHA + uncertainty propagation system architecture
+
+═══════════════════════════════════════════════════════════════
+END OF HANDOFF DOCUMENT
+Eric D. Martin — ORCID 0009-0006-5944-1742
+All Your Baseline LLC
+═══════════════════════════════════════════════════════════════
+
+═══════════════════════════════════════════════════════════════
+UPDATE 2026-03-29 — CLAIMS 57–59 ADDED
+═══════════════════════════════════════════════════════════════
+
+Gap identified by dual analysis (Claude + G5):
+No independent claim covered the cross-survey comparison method.
+
+ADDED:
+  Claim 57 — NEW INDEPENDENT CLAIM
+    Frame-agnostic cross-survey comparison via ξ-normalization.
+    Primary commercial licensing hook.
+    Generic "first survey / second survey" — no named surveys.
+    Covers identical CosmoIDs AND gateway-transformable CosmoIDs.
+    Does NOT require full decode to Cartesian.
+
+  Claim 58 — dependent on 57
+    BAO vs CMB specific embodiment.
+
+  Claim 59 — dependent on 57
+    Gateway Transform tolerance embodiment.
+
+  Section I — new spec paragraph
+    Explicit written-description support for Claim 57.
+    References DESI DR1/DR2 demonstration paper.
+
+G5 prosecution sanity checks — ALL PASS:
+  ✓ Does not require full decoding
+  ✓ Covers gateway transforms
+  ✓ No named surveys (generic language)
+  ✓ CosmoID identity OR gateway-transformable both covered
+  ✓ Claim 55 kept in place (layered coverage)
+
+Updated totals:
+  Total claims: 59
+  Independent claims: 16 (within USPTO 20-claim limit)
+

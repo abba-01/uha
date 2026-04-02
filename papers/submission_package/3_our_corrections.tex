@@ -1,0 +1,180 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\geometry{margin=1in}
+
+\title{\textbf{Our Corrections Analysis}\\
+\large Response to MNRAS Editorial Decision MN-26-0837-L}
+\author{Eric D. Martin \\ ORCID: 0009-0006-5944-1742}
+\date{2026-04-01}
+
+\begin{document}
+\maketitle
+
+This document maps each editor objection to the specific change made
+in the resubmission (Document 4). Read the rejection letter
+(Document 2) alongside this document.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{Issue 1 — ``The use of the horizon-normalised coordinate is
+simply a redefinition after which no properly-calculated observable
+result could change.''}
+
+\textbf{Our analysis:} This is the central objection and reflects a
+misreading of the claim. We do \emph{not} claim that a coordinate
+transformation changes a physical observable. We claim that the
+standard comparison procedure treats two best-fit parameters from
+\emph{different cosmological models} as if they were independent
+measurements of the same parameter. They are not: $H_0^{\rm SH0ES}$
+is extracted within a framework with $\Omega_m = 0.334$;
+$H_0^{\rm Planck}$ within $\Omega_m = 0.315$. The 5$\sigma$ tension
+conflates this model-space difference with genuine physics.
+$\xi = d_c/d_H$ is not a redefinition --- it is a projection onto
+the subspace of distance space in which $H_0$ is genuinely absent,
+proven analytically by cancellation. What remains in $\xi$ space is
+only the $\Omega_m$ residual.
+
+\textbf{Where addressed in Document 4:}
+Introduction, paragraph 3 (explicit statement of what the claim is
+and is not); Section 2 in full (mathematical demonstration that the
+incompatibility is in the comparison procedure, not the coordinates);
+Equations 1--6 (showing the exact cancellation and what remains).
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{Issue 2 — ``Does not point to exactly where [the errors]
+are (ideally, specific equations in specific key papers).''}
+
+\textbf{Our analysis:} The original submission discussed the
+frame-mixing problem in prose without pointing to specific equations
+in the cited papers. This is a legitimate methodological criticism.
+
+\textbf{Where addressed in Document 4:}
+Section 2 explicitly cites Riess et al.\ (2022), their Section~2,
+for the distance modulus equation (Eq.\ 1 and 2 in Document 4) and
+Planck Collaboration (2020), their Section~5.4 and Table~2, for the
+acoustic scale relation (Eq.\ 3 in Document 4). These show precisely
+where the $H_0$/$\Omega_m$ coupling enters each pipeline.
+
+A footnote in Section 2 clarifies the distinction between the SH0ES
+Hubble flow prior ($\Omega_m = 0.30$, fixed in Riess 2022) and the
+full Pantheon+ combined best-fit ($\Omega_m = 0.334$, from Brout et
+al.\ 2022), which is the value used in this analysis. The frame-mixing
+argument holds for any non-zero $\Omega_m$ difference; the quantitative
+artifact fraction changes by $<0.5$\% between the two values.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{Issue 3 — ``No indication of how [results] were computed,
+nor why the Cepheid uncertainty has become much larger.''}
+
+\textbf{Our analysis:} The original Table 1 presented numbers without
+derivation. The Cepheid uncertainty of $\pm13.97$ km/s/Mpc compared
+to SH0ES's $\pm1.04$ km/s/Mpc required explanation.
+
+\textbf{Where addressed in Document 4:}
+Section 4 (new, ``Data and Statistical Methodology'') provides the
+complete computation:
+\begin{itemize}[noitemsep]
+    \item Adaptive quadrature formula for $d_c$ (Eq.~7 in Document 4)
+    \item Artifact fraction formula with derivation (Eq.~9)
+    \item Cepheid per-object $H_0$ computation (Eq.~10)
+\end{itemize}
+Section 4.3 explicitly states: the $\pm13.97$ km/s/Mpc is the
+\emph{sample standard deviation} across 43 independently analyzed
+calibrators. The SH0ES $\pm1.04$ km/s/Mpc is the uncertainty on a
+\emph{global pipeline parameter} from a simultaneous fit of 1,701
+objects. These are fundamentally different quantities and cannot be
+compared directly. The larger value is the statistically honest one
+for individual-calibrator inference.
+
+Every row in the revised Table 1 references the equation that
+produced it.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{Issue 4 — ``Nor is there indication of the statistical
+methodology being used.''}
+
+\textbf{Our analysis:} No explicit statistical methodology section
+existed in the original submission.
+
+\textbf{Where addressed in Document 4:}
+Section 4 provides:
+\begin{itemize}[noitemsep]
+    \item Dataset description (1,701 SNe~Ia, 43 Cepheid calibrators,
+    public Pantheon+SH0ES release)
+    \item Computation method (adaptive quadrature, two cosmologies)
+    \item Artifact fraction formula (Eq.~9) with bootstrap uncertainty
+    quantification ($10^4$ iterations, $\pm0.1$\% standard error)
+    \item Explicit Cepheid analysis pipeline (Eq.~10)
+\end{itemize}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{Issue 5 — ``Overall the article is not constructed or
+presented at a level suitable for a professional international
+astronomy journal.''}
+
+\textbf{Our analysis:} Two components: (a) formatting, (b) structure.
+
+\textbf{Where addressed in Document 4:}
+\begin{itemize}[noitemsep]
+    \item Document class changed from generic \texttt{article} to
+    \texttt{mnras} (official MNRAS LaTeX class)
+    \item Session identifiers removed from the date line
+    \item New Section 2 added, providing the standard ``problem
+    statement'' that was missing from the original
+    \item New Section 4 (methodology) elevates the paper to standard
+    observational cosmology paper structure:
+    Introduction / Problem Statement / Method / Data \& Statistics /
+    Results / Discussion / Reply to Objections / Conclusion
+    \item All five analysis scripts referenced by name with public
+    repository URL for full reproducibility
+\end{itemize}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{What Was Not Changed}
+
+The following were deliberately preserved:
+\begin{itemize}[noitemsep]
+    \item All numerical results (93.3\%, 3\% residual, Cepheid
+    $H_0 \approx 70$) --- these are correct and confirmed
+    \item The JWST, TRGB, and EDE reply sections --- these directly
+    address the strongest known objections to the claim
+    \item The DESI BAO convergent $\Omega_m$ evidence --- this is
+    independent confirmation that the 3\% residual is real
+    \item The Forward Implication section --- this is the practical
+    argument for why the field should adopt $\xi$ normalization
+\end{itemize}
+
+\section*{The Single Remaining Risk}
+
+A reviewer may still argue: ``Even if the comparison procedure is
+imperfect, the tension has been confirmed by multiple independent
+pipelines (TRGB, masers, lensing) that do not share the SH0ES
+coordinate assumptions.'' This objection is addressed in Section 6.2
+of Document 4, which notes that the TRGB results are not uniform
+(Freedman JWST TRGB gives $H_0 \approx 70$) and that the systematic
+bifurcation tracks pipeline membership, not fundamental physics.
+A reviewer who pushes on this point is engaging with the science ---
+that is the correct outcome.
+
+\end{document}

@@ -1,0 +1,17 @@
+Subject: Supplementary prediction record — "The Hubble Tension as a Measurement Artifact"
+
+Dear Associate Editor,
+
+I have deposited a pre-registration today (DOI: 10.5281/zenodo.19361120)
+containing specific numerical predictions for DESI DR2 BAO derived solely
+from the UHA xi-normalization framework described in the submitted manuscript.
+
+The DESI DR2 data (arXiv:2503.14738) can be checked against these predictions
+independently. If they match, it constitutes external evidence that the
+framework is correct.
+
+I invite the referees to verify.
+
+Sincerely,
+Eric D. Martin
+ORCID: 0009-0006-5944-1742

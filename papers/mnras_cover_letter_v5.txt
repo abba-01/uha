@@ -1,0 +1,110 @@
+Dear Editors,
+
+I submit for your consideration the manuscript "The Hubble Tension as a
+Measurement Artifact: Quantifying the Frame-Mixing Systematic via
+Horizon-Normalized Coordinates" for publication as a Letter in Monthly
+Notices of the Royal Astronomical Society.
+
+WHAT THIS PAPER CLAIMS — AND DOES NOT CLAIM
+
+I wish to be direct about the central argument, as it is easily
+misread. This paper does not claim that a coordinate transformation
+changes any physical observable. It claims that the standard comparison
+procedure — computing the tension as
+(H0_SH0ES - H0_Planck) / sigma_combined — treats two best-fit
+parameters from different cosmological frameworks as if they were
+independent measurements of the same quantity. They are not.
+
+H0_SH0ES = 73.04 km/s/Mpc is extracted from the Hubble diagram
+(Riess et al. 2022, Section 2) under a cosmological model with
+Omega_m = 0.334. H0_Planck = 67.4 km/s/Mpc is extracted from the
+CMB acoustic scale (Planck Collaboration 2020, Section 5.4, Table 2)
+under a model with Omega_m = 0.315. Since the luminosity distance
+d_L(z; H0, Omega_m) depends jointly on both parameters (Eq. 2 of this
+manuscript), the extracted H0 values absorb part of the Omega_m
+difference. The 5-sigma figure quantifies the combined effect of this
+frame difference plus any genuine physical discrepancy — it does not
+separate them.
+
+The horizon-normalized coordinate xi = d_c/d_H achieves this
+separation. The H0 factors in d_c and d_H cancel exactly for any
+redshift-derived distance (proven analytically in Eq. 6 of this
+manuscript), leaving a residual that depends only on Omega_m and
+other shape parameters. This is not a redefinition — it is a
+projection onto the subspace of distance space from which H0 has
+been genuinely removed.
+
+SPECIFIC ADDITIONS IN THIS MANUSCRIPT
+
+This manuscript has been substantially restructured relative to any
+prior version to address the following points:
+
+1. Section 2 (new) explicitly identifies the frame-mixing error
+   with reference to specific equations in Riess et al. 2022 and
+   Planck Collaboration 2020 — pointing to the exact terms in which
+   the incompatible Omega_m assumptions enter the H0 extraction.
+
+2. Section 4 (new) provides a complete statistical methodology:
+   adaptive quadrature computation of d_c, the artifact fraction
+   formula (Eq. 9) with bootstrap uncertainty (10^4 iterations),
+   and explicit derivation of the Cepheid-per-object H0 via
+   Eq. 10. The larger Cepheid uncertainty (13.97 vs. 1.04 km/s/Mpc)
+   is explained in full: it is the sample standard deviation across
+   43 independently analyzed calibrators, not a pipeline fit
+   parameter. These are fundamentally different quantities and the
+   larger value is the statistically honest one.
+
+3. The result table now references the equations used to derive
+   each entry.
+
+4. The manuscript uses MNRAS document class formatting throughout.
+
+REPRODUCIBILITY
+
+All five analysis scripts are publicly available at
+https://github.com/abba-01/uha (gaia_zero_bias_test.py,
+cepheid_xi_test.py, jwst_xi_test.py, bao_xi_test.py,
+s8_sigma8_xi_test.py). The dataset is the public Pantheon+SH0ES
+release (Brout et al. 2022). Any reader can reproduce every number
+in Table 1 by running the scripts against the public data.
+
+SIGNIFICANCE
+
+The paper's primary contribution is methodological: it demonstrates
+that 93.3% (+/- 0.1%) of the apparent Hubble tension is a
+coordinate-frame artifact quantifiable on existing public data,
+and isolates a real 3% physical residual attributable to an Omega_m
+discrepancy independently confirmed by DESI BAO DR1/DR2 and S8
+weak lensing surveys. If correct, this substantially reduces the
+required energy injection in Early Dark Energy models and reframes
+the cosmological tension problem as primarily a matter-density
+question rather than an expansion-rate question.
+
+I suggest the following reviewers as having relevant expertise
+(none have conflicts of interest with the author):
+
+  - Prof. Wendy Freedman, University of Chicago
+    (TRGB distance ladder, independent H0 measurements)
+  - Prof. Daniel Scolnic, Duke University
+    (Pantheon+ dataset, SN Ia cosmology)
+  - Prof. Licia Verde, University of Barcelona
+    (statistical methodology in cosmological parameter estimation)
+  - Prof. Bharat Ratra, Kansas State University
+    (dark energy, cosmological parameter constraints)
+  - Prof. Dragan Huterer, University of Michigan
+    (systematic effects in cosmological measurements)
+
+The following reviewers should be excluded due to potential conflicts:
+  - Prof. Adam Riess (direct stake in SH0ES result)
+  - Prof. Vivien Poulin (EDE models addressed as alternative)
+
+The manuscript is 3,200 words (excluding references and abstract),
+within the MNRAS Letters limit. No proprietary data were used.
+The manuscript is deposited on Zenodo (DOI: 10.5281/zenodo.19230366)
+as a public preprint record.
+
+Yours sincerely,
+
+Eric D. Martin
+ORCID: 0009-0006-5944-1742
+doctor.eric.martin@gmail.com
