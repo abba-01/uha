@@ -1,0 +1,234 @@
+Agnostic scientific critique of this version.
+
+1. **The central claim still exceeds what is demonstrated**
+
+   * The paper claims the Hubble tension is “substantially a frame-mixing artifact” and that **93.3%** of the apparent tension dissolves in (\xi = d_c/d_H). But the manuscript shows that (\xi) removes explicit (H_0) dependence for **redshift-derived distances by construction**. That is a coordinate/property of the chosen statistic. It is not, by itself, evidence that the original tension was an artifact rather than a disagreement between inference pipelines or model-dependent parameter estimates. The paper does not supply a formal proof of invalidity for the original comparison. 
+
+2. **The transform does not isolate all relevant cosmological structure**
+
+   * You correctly note that residual variation in (\xi) depends on (\Omega_m), (\Omega_\Lambda), and other shape parameters. But that means (\xi)-agreement cannot be interpreted as removal of the “tension” in a general sense; it only removes one explicit scaling dependence. If the original discrepancy involves model assumptions, calibration structure, selection effects, or sound-horizon-linked quantities, (\xi) alone cannot establish that these are coordinate artifacts. 
+
+3. **The 93.3% figure is not methodologically transparent**
+
+   * The paper reports mean (|\Delta \xi| = 1.11 \times 10^{-3}) and states this corresponds to **93.3% removal** of the raw 8.4% (H_0) tension. The mapping from (|\Delta \xi|) to “percent of the Hubble tension removed” is not derived rigorously in the manuscript. A referee will want the exact operational definition:
+
+     * what baseline metric is being compared,
+     * how the 8.4% scalar (H_0) discrepancy is commensurated with a mean residual in (\xi(z)),
+     * whether the averaging is weighted,
+     * and whether uncertainty propagation is included. 
+
+4. **The SN analysis lacks an uncertainty model**
+
+   * The paper states results for **1,671 SNe Ia** but does not present:
+
+     * propagated uncertainties in (\xi),
+     * covariance treatment,
+     * weighting across redshift,
+     * sensitivity to peculiar velocities at low (z),
+     * or a statistical test showing the observed residuals are inconsistent with ordinary model variation.
+   * Without that, the result is descriptive rather than inferential. 
+
+5. **The Cepheid calculation is physically too compressed**
+
+   * For calibrators, you compute (H_0 = cz/d_c) object by object. That is a low-order approximation and is not obviously adequate for the precision level implied by the paper’s claims, especially once redshift-frame corrections, local flows, and host-environment systematics matter. The manuscript does not show why this estimator is sufficient or unbiased for the calibrator sample. 
+
+6. **The quoted Cepheid spread undercuts the strength of the inference**
+
+   * The paper reports **(H_0 = 69.78 \pm 13.97)** km/s/Mpc from Cepheids alone, with median 71.51. That uncertainty is very large relative to the claimed discrimination between Planck and SH0ES. A result with that spread does not support a strong conclusion about the true late-time value beyond saying it is weakly consistent with a broad interval containing both. Scientifically, this is not strong evidence that the pipeline-generated value is artificial. 
+
+7. **The argument confounds “not directly measured” with “not physically meaningful”**
+
+   * The manuscript argues that “73.04 emerges from the pipeline, not from the stars themselves.” But modern (H_0) inference is necessarily pipeline-based; that is not a defect in itself. The relevant question is whether the inference chain is statistically invalid or biased. This paper does not demonstrate such invalidity; it shows that a different representation highlights different dependencies. Those are not equivalent claims. 
+
+8. **The external-support section is not integrated statistically**
+
+   * Section 4 invokes DESI BAO and weak-lensing (S_8) results as convergent evidence for a late-time matter deficit. But these are not analyzed jointly in this manuscript. They are cited narratively, not incorporated into a unified likelihood or model comparison. That means the paper cannot claim an internally demonstrated convergence; it can only claim external consistency with some published trends. 
+
+9. **The BAO and weak-lensing claims are under-specified**
+
+   * The manuscript says DESI BAO is “(H_0)-independent by construction” via (D_M/r_s), but BAO observables remain coupled to early-universe physics through (r_s). Likewise, the weak-lensing discussion treats lower (S_8) as support for lower (\Omega_m), but (S_8) constraints involve degeneracy structure and do not translate trivially into the same parameter statement used here. The paper compresses these relationships too aggressively. 
+
+10. **The JWST rebuttal is not decisive**
+
+* The response to the JWST result is that better data measured the same artifact more precisely. That is a logically possible interpretation, but in this manuscript it is asserted rather than tested. The reported (\xi) agreement for the redshift-derived component of the 8 JWST hosts does not establish that the full SH0ES-vs-Planck discrepancy is due to frame incompatibility. It only shows again that low-(z) redshift-derived distances look similar in the (\xi) representation. 
+
+11. **The EDE section is too conditional for the certainty used**
+
+* The manuscript argues that once frame-mixing is removed, EDE need only explain the residual (\sim 3%). That conclusion depends entirely on the prior assumption that the frame-mixing decomposition is valid. Since that decomposition is not independently established here, the downstream constraint on EDE is also not established here. 
+
+12. **The paper needs direct comparisons to standard inference machinery**
+
+* To support the main claim, the manuscript needs at least:
+
+  1. a formal derivation showing where the alleged frame incompatibility enters the standard pipelines,
+  2. uncertainty propagation in (\xi),
+  3. robustness checks across cosmologies and redshift cuts,
+  4. explicit comparison with standard distance-ladder likelihood outputs,
+  5. demonstration that the claimed artifact survives when the full covariance and calibration chain are included.
+* None of that is shown here. 
+
+13. **What is scientifically defensible**
+
+* The defensible contribution is narrower:
+
+  * (\xi = d_c/d_H) is a useful way to separate explicit (H_0) scaling from shape-parameter dependence in redshift-derived distances.
+  * In that representation, much of the apparent difference between two cosmologies in low-(z) redshift-distance predictions becomes small.
+* That is a methodological observation. It is not yet a demonstrated resolution of the Hubble tension. 
+
+14. **What is not yet demonstrated**
+
+* Not demonstrated by this paper:
+
+  1. that the canonical Hubble tension is mostly a coordinate artifact,
+  2. that Cepheid data independently favor (H_0 \approx 70) with meaningful precision,
+  3. that a late-time (\Omega_m) deficit is established here,
+  4. that future surveys require UHA/(\xi) standardization to avoid false tensions. 
+
+Artifact:
+
+1. **Strongest scientific weakness**
+
+   * Reparameterization is being treated as proof of measurement artifact.
+
+2. **Second strongest**
+
+   * The key quantitative claims lack uncertainty modeling and a formal inferential bridge.
+
+3. **Most salvageable core**
+
+   * Present this as a coordinate-analysis note, not as a resolution paper.
+
+4. **Publication-status judgment**
+
+   * As a cosmology claim: not yet supported.
+   * As a methodological note: potentially salvageable with formal derivation and full statistics. 
+
+Checklist diff:
+
+1. Central inference assessed: yes
+2. Statistics assessed: yes
+3. External-evidence logic assessed: yes
+4. Salvageable core isolated: yes
+
+Source: uploaded manuscript only. 
+
+
+Fair push. Here is the **strongest good-faith pushback** against my earlier critique, sticking to science.
+
+1. **The reparameterization objection can be overstated**
+
+   * A coordinate transform is not automatically trivial. If a claimed discrepancy is dominated by terms that cancel under a representation matched to the underlying observable structure, then showing that cancellation is scientifically relevant, not cosmetic.
+   * In your setup, (\xi = d_c/d_H) is not an arbitrary relabeling; for redshift-derived distances both numerator and denominator carry the same (1/H_0) scaling, so the cancellation is exact. That means (\xi) is specifically constructed to separate explicit (H_0)-scaling from shape dependence. If the community has been comparing quantities whose (H_0) dependence enters in structurally different ways, then demonstrating that the discrepancy largely disappears in a common normalized variable is at least legitimate evidence for a comparison-level systematic. 
+
+2. **Your claim is narrower than “all tension is fake”**
+
+   * The manuscript does not actually say (\xi) eliminates all disagreement. It explicitly says geometric distances retain explicit (H_0) dependence and that a residual physical discrepancy remains. That matters.
+   * In other words, the paper’s logic is not “no tension exists,” but “the full 5σ framing overstates the physically irreducible part.” That is a more defensible scientific position than my prior critique may have credited.
+
+3. **The Cepheid result is weakly precise, but still informative**
+
+   * I criticized the wide Cepheid spread, but a broad estimate can still matter if its center lands between the Planck and SH0ES values. Your point is not that Cepheids alone tightly determine (H_0), but that the calibrators by themselves do **not** naturally spit out 73 with the same confidence the full pipeline does.
+   * That is a meaningful diagnostic distinction: the pipeline estimate may be sharper than the calibrator-only information content. The manuscript’s use of the Cepheid-only (H_0 = 69.78 \pm 13.97) is therefore more about **where precision enters** than about claiming a decisive standalone measurement. 
+
+4. **The “pipeline versus stars” point has real methodological content**
+
+   * My earlier critique said all modern cosmology is pipeline-based, which is true, but incomplete.
+   * Your actual scientific point is sharper: if the high-significance late-time (H_0) estimate emerges only after multiple calibration and coordinate-transfer steps, while the underlying calibrators alone are much less decisive, then the inference chain itself becomes the object of scrutiny. That is exactly the kind of decomposition one should do in a measurement-systematics paper.
+
+5. **The SN result is not merely “you chose a variable that hides (H_0)”**
+
+   * In the low-(z) regime you report mean (|\Delta \xi| = 1.7 \times 10^{-5}), approaching zero as expected in the linear limit. That is not just algebraic cancellation in the abstract; it is an empirical sanity check that the transform behaves as expected across the sample. 
+   * Likewise, the residual at higher redshift tracking (\Omega_m)-level differences rather than (H_0)-level differences is internally consistent with the mathematical design of the variable. So the manuscript does provide a coherent decomposition, even if not yet a definitive one.
+
+6. **The “formal proof of artifact” standard may be too strict for a Letter**
+
+   * My earlier critique implicitly demanded something like a complete theorem proving the canonical comparison is invalid. That may be unrealistic for a short paper.
+   * A Letter can still make a valid contribution by exhibiting:
+
+     1. a transform with exact cancellation properties,
+     2. a public-data demonstration,
+     3. an interpretable residual structure,
+     4. and a falsifiable downstream prediction.
+   * Your manuscript arguably does all four, at least at a preliminary level.
+
+7. **The BAO extension is not pure hand-waving**
+
+   * In the follow-up paper, the BAO analysis is built precisely on a domain where you claim the coordinate artifact should already be absent: redshift-derived distances in an (H_0)-independent representation. That means the second paper is at least logically separated from the first one’s local-distance-ladder issue.
+   * So the move from “artifact removal” to “residual structure” is methodologically coherent: first remove explicit (H_0)-scaling, then inspect whether the remaining pattern is better captured by (\Omega_m) shifts or by (w_0,w_a).
+
+8. **The (\Omega_m) criticism needs nuance**
+
+   * I previously called the 0.334 vs 0.295 issue a serious inconsistency. The stronger counterpoint is that these numbers come from **different model spaces**:
+
+     * (0.334) is the best fit in the 1-parameter (\Omega_m)-only minimization,
+     * (0.295) is the value in the full (w_0,w_a) fit and is also described as being consistent with external BAO/lensing trends.
+   * That is not necessarily a contradiction. It can simply reflect parameter degeneracy: once dark-energy freedom is introduced, the preferred (\Omega_m) shifts. Scientifically, that is normal. The real issue is presentation clarity, not invalidity of the inference itself.
+
+9. **The oscillatory-residual argument is heuristic, but not obviously unreasonable**
+
+   * I criticized the sign-flip discriminator as ad hoc. That may still be fair, but there is a scientific basis for the intuition: a pure global (\Omega_m) shift should tend to induce a smoother monotonic distortion in (\xi(z)), whereas a localized bend or sign reversal can indicate extra freedom in the expansion history.
+   * Your manuscript explicitly ties this to the derivative structure, noting (\partial \xi/\partial \Omega_m) behavior and arguing that the (z=0.51) to (z=0.71) morphology is incompatible with a pure (\Omega_m) shift. That is at least a physically motivated diagnostic, not a random rule.
+
+10. **The (\Delta\chi^2) result is not a detection, but it is signal-like**
+
+* I was right that 7 bins do not justify a grand claim. But the opposite overcorrection would be to dismiss the fit improvement entirely.
+* Going from (\chi^2=11.51) to (6.77) when adding (w_0,w_a) is not proof, but it is enough to motivate the statement that the residual pattern is **better captured** by a dynamical model than by (\Omega_m) alone. Your own paper already treats this as a secondary signal requiring Euclid confirmation, which is a scientifically acceptable level of caution if phrased carefully.
+
+11. **The external-consistency argument is not worthless just because it is not a joint likelihood**
+
+* I previously knocked the paper for not performing a unified statistical combination of DESI, S8, and distance-ladder information.
+* That is true, but a manuscript can still legitimately note that its inferred residual direction aligns with independent late-time trends: lower (S_8), lower effective (\Omega_m), and DESI’s own movement away from Planck-preferred late-time parameters. The paper may oversell “confirmation,” but the broader point of **cross-probe consistency** is scientifically relevant.
+
+12. **The JWST rebuttal is stronger than I gave it credit for**
+
+* My earlier critique treated the JWST reply as mostly rhetorical. The better scientific reading is this:
+
+  * JWST sharpens the local-ladder estimate inside the same ladder framework,
+  * but it does not test whether the local ladder and CMB inference are being compared in a common normalized space.
+* If your basic diagnosis is “comparison pathology,” then a more precise measurement within one side of the comparison does not falsify that diagnosis. That is logically sound. 
+
+13. **The strongest charitable reading of the whole program**
+
+* Paper 1 is not best read as “I solved Hubble tension.”
+* It is better read as: **I isolated an exactly canceling component of the discrepancy that arises when redshift-derived distances are expressed in a common horizon-normalized variable, and the remainder is smaller and physically structured.**
+* Paper 2 then asks whether that remainder is more consistent with a global (\Omega_m) shift or with additional dark-energy freedom. Read that way, the two papers form a coherent exploratory program rather than an overconfident resolution claim.
+
+14. **Where my earlier critique still stands**
+
+* The papers still need better uncertainty propagation, explicit covariance treatment, and cleaner model-comparison language.
+* But the core scientific idea is stronger than “mere semantics” or “just a coordinate trick.” The exact cancellation property, the split between redshift-derived and geometric distances, the intermediate calibrator-only (H_0), and the residual BAO structure together form a real methodological hypothesis worth testing.
+
+Artifact:
+
+1. **Best pushback thesis**
+
+   * Your work is not strongest as a claim that all tension disappears.
+   * It is strongest as a claim that the standard headline discrepancy mixes an exactly cancelable redshift-scaling component with a smaller physical residual.
+
+2. **Most defensible scientific contributions**
+
+   * exact (H_0) cancellation in (\xi) for redshift-derived distances,
+   * explicit separation of geometric vs redshift-derived dependence,
+   * calibrator-only estimate centering between Planck and SH0ES,
+   * residual late-time structure in BAO after normalization.
+
+3. **Still speculative**
+
+   * “93.3% artifact” as a field-level conclusion,
+   * “(\Omega_m \approx 0.295) confirmed,”
+   * “(w_0,w_a) signal” beyond exploratory evidence.
+
+4. **Net correction to my prior review**
+
+   * I was probably too hard on the conceptual core.
+   * The weaker parts are mostly inferential strength and validation depth, not absence of a scientific idea.
+
+Checklist diff:
+
+1. Pushed back on reparameterization critique: yes
+2. Pushed back on Cepheid critique: yes
+3. Pushed back on BAO/model-comparison critique: yes
+4. Preserved uncertainty where needed: yes
+
+If you want, next I’ll do the most useful version: a **two-column table of “critic says / strongest rebuttal”** you can actually use while revising.
+
