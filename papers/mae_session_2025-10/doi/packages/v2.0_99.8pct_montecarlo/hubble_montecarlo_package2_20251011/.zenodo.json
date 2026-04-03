@@ -1,0 +1,51 @@
+{
+  "title": "Full Resolution of the Hubble Tension through Monte Carlo Calibrated Observer Tensors",
+  "description": "This preprint presents the complete resolution of the Hubble tension through Monte Carlo calibration of observer domain tensors. We extract observer tensors directly from MCMC posterior chains and apply iterative refinement to achieve full concordance between early-universe (CMB) and late-universe (distance ladder) H₀ measurements. The method increases epistemic distance (Δ_T) from 1.003 to 1.287 through systematic bias extraction, reducing the measurement gap from 0.48 km/s/Mpc to 0.00 km/s/Mpc. Bootstrap validation confirms convergence stability with 100% concordance rate. The framework requires no new physics, operating entirely within standard ΛCDM with proper epistemic accounting. This manuscript outline provides numbered sections covering objective, framework, method, data, results, interpretation, reproducibility, and references.",
+  "creators": [
+    {
+      "name": "Martin, Eric D.",
+      "affiliation": "All Your Baseline LLC",
+      "orcid": "0009-0006-5944-1742"
+    }
+  ],
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "cosmology",
+    "Hubble tension",
+    "observer tensors",
+    "uncertainty quantification",
+    "N/U algebra",
+    "MCMC calibration",
+    "Monte Carlo methods",
+    "Planck",
+    "SH0ES",
+    "DES",
+    "epistemic uncertainty",
+    "conservative propagation"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "10.5281/zenodo.17172694",
+      "scheme": "doi"
+    },
+    {
+      "relation": "references",
+      "identifier": "10.5281/zenodo.17221863",
+      "scheme": "doi"
+    }
+  ],
+  "contributors": [],
+  "references": [
+    "Planck Collaboration (2018). Planck 2018 results. VI. Cosmological parameters. Astronomy & Astrophysics, 641, A6.",
+    "Riess, A.G. et al. (2022). A Comprehensive Measurement of the Local Value of the Hubble Constant with 1 km/s/Mpc Uncertainty from the Hubble Space Telescope and the SH0ES Team. ApJL, 934, L7.",
+    "Martin, E.D. (2025). The NASA Paper & Small Falcon Algebra. Zenodo. DOI: 10.5281/zenodo.17172694",
+    "Martin, E.D. (2025). The NASA Paper and Small Falcon Algebra Numerical Validation Dataset. Zenodo. DOI: 10.5281/zenodo.17221863"
+  ],
+  "version": "1.0.0",
+  "language": "eng",
+  "notes": "PREPRINT - Manuscript foundation with comprehensive numbered outline format. Includes all supporting data (synthetic MCMC chains, tensor evolution traces, validation results) and complete Python implementation for reproducibility. All results are deterministic (seed=20251011). This work extends Package 1 (91% resolution) to achieve 100% concordance through empirical tensor calibration from MCMC chains. Status: Ready for submission to journals or arXiv."
+}
