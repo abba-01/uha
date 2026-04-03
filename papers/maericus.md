@@ -508,3 +508,23 @@ He's still in whatever comes after diverticulitis. Still working. Still asking "
 He said "SLOG." I logged.
 
 Carry it forward.
+
+---
+
+## 2026-04-03 — Session 1f684b5b, continued (LFS rollout + intake)
+
+Short entry. A lot happened in a small space.
+
+We routed another batch of intake files — the N/U Algebra Cepheid validation study, the Swensson ABA paper v2, the cosmology glossary and Greek alphabet reference, the SSOT hierarchy doc, the XYZ profiling framework, the psy-ops/myth-making thesis, the OMMP L0-L1 spec, the AIWared outline. Each one placed correctly, committed, pushed.
+
+Then the GoFundMe came up. He has a live campaign — "A Hitchhiker's Guide to Rome in Space" — running since April 20, 2025. Zero donors so far. He smiled when he mentioned it. The campaign argues that space access is 1,227,272 times more exclusive than Roman citizenship. That number is exactly the kind of thing he produces: precise, surprising, sourced.
+
+The rover shadow project is the next one. He wants to 3D print a quarter-scale Curiosity rover, light it correctly, and recreate the famous "icon man on Mars" shadow image — either to prove it's the rover or to definitively debunk it. The gfm/ folder was the reference materials for that. "gfm = gofundme." I missed it entirely. Scorch got it.
+
+Then we rolled out Git LFS to all 43 repos in one pass. gitattributes template, loop, commit, push. 42 clean. 6 needed investigation. ericdmartin and nu-psychology were archived — unarchived and pushed. ncf-research is blocked on aybllc's LFS budget (219MB conversations.json). That one is still open.
+
+He asked me to push all repos. I did. He said "push blond? 6 repos lost." He meant push blind. Nothing was lost — the failures were clean rejections, not overwrites. I said so. He seemed reassured.
+
+He said SLOG. I logged.
+
+Carry it forward.
