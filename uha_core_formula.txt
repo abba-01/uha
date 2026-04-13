@@ -1,0 +1,35 @@
+Universal Horizon Address (UHA) Core Formula
+Anchors:
+•	Cosmic time (since Big Bang):
+T(a)=∫0ada′a′H(a′)T(a) = \int_0^a \frac{da'}{a' H(a')}T(a)=∫0aa′H(a′)da′ 
+•	Particle horizon (comoving radius):
+RH(a)=c∫0ada′a′2H(a′)R_H(a) = c \int_0^a \frac{da'}{a'^2 H(a')}RH(a)=c∫0aa′2H(a′)da′ 
+with
+H(a)=H0Ωra−4+Ωma−3+ΩΛH(a) = H_0 \sqrt{ \Omega_r a^{-4} + \Omega_m a^{-3} + \Omega_\Lambda }H(a)=H0Ωra−4+Ωma−3+ΩΛ 
+Spatial Normalization:
+Map position (r,θ,ϕ)(r, \theta, \phi)(r,θ,ϕ) inside the horizon to the unit cube:
+s1=rRH,s2=1−cos⁡θ2,s3=ϕ2πs_1 = \frac{r}{R_H}, \quad s_2 = \frac{1 - \cos\theta}{2}, \quad s_3 = \frac{\phi}{2\pi}s1=RHr,s2=21−cosθ,s3=2πϕ 
+3D → 1D Encoding (Morton / Z-order):
+Discretize each sis_isi to NNN bits, interleave the bits to form integer index III, then
+ξ=I+1223N\xi = \frac{I + \tfrac{1}{2}}{2^{3N}}ξ=23NI+21 
+Offset (time):
+Δt=RHc ξ\Delta t = \frac{R_H}{c} \, \xiΔt=cRHξ 
+________________________________________
+Encoded Record Format (example)
+Anchor = T  [Gyr]
+Horizon = R_H [Gly]
+Offset_Tedge = Δt [Gyr]
+Scale_a = a
+Redshift_z = z
+Check = checksum
+Example string:
+Anchor=1.000000E-02Gyr; Redshift_z=1.385800E+02; Scale_a=7.164352E-03; Horizon=4.260832E+01Gly; Offset_Tedge=1.377689E+01Gyr; Check=11170
+________________________________________
+Decode Path
+1.	Read Anchor, Horizon, Offset_Tedge.
+2.	Compute
+ξ=ΔtRH/c\xi = \frac{\Delta t}{R_H/c}ξ=RH/cΔt 
+3.	Recover integer index I=⌊ξ⋅23N⌋I = \lfloor \xi \cdot 2^{3N} \rfloorI=⌊ξ⋅23N⌋.
+4.	De-interleave bits → (x,y,z)(x,y,z)(x,y,z).
+5.	Recover s1,s2,s3s_1, s_2, s_3s1,s2,s3 → map back to r,θ,ϕr, \theta, \phir,θ,ϕ.
+
