@@ -57,11 +57,11 @@ Inherited from Z0 §1.1 unless narrowed below.
 Inherited from Z0 §1.1. Track 0 narrowing:
 
 - **Baseline:** the source coordinate system, software package, or source product as published, without UHA wrapping.
-- **Improvement:** UHA wrapping reduces memory footprint, increases proximity-query throughput, OR strengthens provenance fields, relative to baseline, on the same data, without loss on the other axes.
+- **Improvement:** UHA wrapping reduces memory footprint, increases proximity-query throughput, OR strengthens provenance fields, relative to baseline, on the same data, without loss on the other axes. Provenance-field gain is treated as benchmark gain only if memory footprint and throughput do not worsen relative to baseline.
 - **Primary success:** all four of (G0-2 round-trip pass) AND (G0-3 benchmark gain on real public data) AND (G0-4 zero SSA false negatives) AND (G0-5 overlay posture confirmed) hold simultaneously on the locked source-class manifest in §3.
 - **Analysis start:** the first execution of the locked encoder pipeline after this Z1 DOI is deposited and recorded.
 - **Same-pipeline rule:** the same encoder/decoder is used across source classes; per-source adapters are documented before analysis start.
-- **Controls:** controls include rerunning round-trip with provenance fields disabled (must NOT pass G0-2 if provenance is part of the encoding) and substituting random data on benchmark step (must NOT pass G0-3). Controls may diagnose robustness; they may not redefine primary success.
+- **Controls:** controls include rerunning round-trip with provenance fields disabled (provenance-disabled controls may pass geometric round-trip but must fail provenance-completeness checks) and substituting random data on benchmark step (must NOT pass G0-3). Controls may diagnose robustness; they may not redefine primary success.
 
 #### Data handling locks
 
@@ -154,7 +154,7 @@ Per Z0 §6.2 Track 0 sub-section, repeated here for child-deposit independence:
 
 ### 6.3 Threshold-to-venue routing (cite Z0 §6)
 
-Per Z0 §6 evidence-class thresholds. Track 0 is a methods/operational test; the realistic outcome bands are Strong / Moderate / Null. Exceptional is unlikely because Track 0 is not a hypothesis test in the cosmological sense. Routing follows the conservative-of-two rule per Z0 §6.
+Per Z0 §6 evidence-class thresholds. Track 0 is a methods/operational test; routing follows the conservative-of-two rule per Z0 §6.
 
 ## 7. Termination criteria (kill switches; Track 0; locked)
 
@@ -179,10 +179,12 @@ The purpose of this structure is to minimize researcher degrees of freedom and p
 | ID | Trigger | Action |
 |---|---|---|
 | K0 | Source metadata not recoverable for a given source class | Mark not UHA-wrap-ready per source; partial coverage; **mark-and-continue (does not halt whole track)** |
-| K1 | UHA encode/decode round-trip failure (exceeds documented precision) for any source class | Stop wrapper claims for that class; if K1 fires on more than one class, halt T0.4–T0.7; cascade to Tracks A, B per Z0 §7 |
+| K1 | UHA encode/decode round-trip failure (exceeds documented precision) for any source class | A single K1 failure invalidates claims for that source class only. More than one K1 failure invalidates the general Track 0 wrapper claim — halt T0.4–T0.7 and cascade to Tracks A, B per Z0 §7. |
 | K2 | No real-data benchmark gain (memory, speed, or provenance) on the locked source-class set | Downgrade operational claim; deposit narrow methods note (Z0 §9 Stage 1 within 14 days); do not deposit positive Track 0 result |
 | K3 | SSA false negative under declared bound | Stop SSA claim until search rule is corrected; deposit narrow methods note (Z0 §9 Stage 1 within 14 days) |
 | K4 | Replacement-first posture required for any source class | Stop overlay claim for that class; if K4 fires on more than one class, halt T0.6–T0.7; deposit revised scope or null |
+
+**K0 / primary-success interaction (clarification):** If K0 fires for any source class, Track 0 may continue over recoverable source classes, but full-manifest primary success cannot be claimed. Primary success per §6.1 requires that every locked source class in §3 pass; partial-coverage continuation under K0 yields a partial-coverage result, not a full-manifest pass.
 
 ### Cross-track propagation (per Z0 §7)
 
@@ -231,6 +233,8 @@ Per Z0 §12. Track 0 commit prefix: `[T0-PhaseN]`. Z1 child Zenodo title: `UHA-E
 ## 13. Version history
 
 - **v1.0 timestamped 2026-04-29T02-30-00-0700 (this draft):** first draft. Track 0 child of Z0 umbrella v1.2-hybrid (deposited 2026-04-29 at DOI `10.5281/zenodo.19881689`). Locks Track 0 hypotheses (H0-T0 / H1-T0), source-class manifest (§3), program phases (§4, T0.1–T0.7), evidence endpoints (§6.1–§6.2), kill switches K0–K4 + cross-track propagation, and failure-publication inheritance from Z0 §9. Pre-canonical (timestamped, no commit hash); cleared for hash-bookkeeping commit cycle and Zenodo mint after gate.
+- **Sanity-pass tightening 2026-04-29T16:24 PDT (pre-deposit, no version bump, pre-canonical):** §1.1 Improvement — added provenance-field gain non-degradation lock (provenance-only gain counts only if memory footprint and throughput do not worsen). §1.1 Controls — softened "must NOT pass G0-2" to allow geometric round-trip pass while requiring provenance-completeness failure. §6.3 — removed "exceptional is unlikely" editorial sentence; routing language tightened to methods/operational + conservative-of-two only. §7 K1 row — clarified cascade threshold: single K1 invalidates source-class claim only; more than one K1 invalidates the general Track 0 wrapper claim and triggers halt + cross-track cascade.
+- **Sanity-pass continuation 2026-04-29T16:42 PDT (pre-deposit, no version bump, pre-canonical):** §7 K0 / primary-success interaction — added explicit clarification that K0 fire on any source class allows partial-coverage continuation but precludes full-manifest primary success claims (§6.1 requires every locked source class in §3 to pass).
 
 ## 14. Final attestation
 
