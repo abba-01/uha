@@ -1,6 +1,6 @@
 # Z3 — Track B Pre-Registration: Cross-Survey Ωm Baseline Common-Baseline Audit
 
-**Status:** DRAFT v0.2 — pre-canonical, NOT deposited. Working draft for read-before-deposit cycle. Applies the 2026-05-04 external consistency review (filed alongside as `Z3_consistency_review_outline_and_chat_log_2026-05-04.md`) and the Freedman/Madore-style outreach framing (filed as `Z3_freedman_pressure_test_outline_2026-05-04.md`).
+**Status:** v0.2 CANONICAL at uha commit `839ce60`. Deposit-ready. GATE:OPEN given by Eric 2026-05-04 17:42 UTC. Working draft for read-before-deposit cycle. Applies the 2026-05-04 external consistency review (filed alongside as `Z3_consistency_review_outline_and_chat_log_2026-05-04.md`) and the Freedman/Madore-style outreach framing (filed as `Z3_freedman_pressure_test_outline_2026-05-04.md`).
 
 **v0.2 delta from v0.1 (2026-05-01):** Δχ² thresholds normalized to Z0 5/20/49 hierarchy throughout; KS labels deprecated and aliased to canonical K0-Z3…K4-Z3; venue-prestige routing removed from §3.5; κ pre-Phase-3 lock procedure inserted in §3.3; cross-protocol cascade narrowed (Z3 null halts Track B only, not all UHA coordinate-provenance tests); EB three-outcome primitive table added; local-anchor and distance-ladder route stratification controls added (Phase 4); Pantheon+ SN-transfer separation added; "common-baseline audit" language used in decision rules (title preserves "unification" for indexing continuity); explicit non-challenge of SH0ES distance ladder; clean-null = valid publishable outcome surfaced. Full changelog at bottom.
 
@@ -13,9 +13,12 @@
 | Parent (umbrella) | Z0 v1.2-hybrid at hubble-tensor commit `d842691`; deposited 2026-04-29 at DOI `10.5281/zenodo.19881689` |
 | Parent (Z2 audit framework) | Z2 deposited 2026-04-29 at DOI `10.5281/zenodo.19908184`; concept `10.5281/zenodo.19908183` |
 | Source protocol | `Omega_M_Baseline_Unification_Experiment_Complete_v1.0_77b639c.md` (commit 77b639c); patent gates removed 2026-05-01 |
-| Working filename | `Z3_omega_m_baseline_preregistration_v0_2_DRAFT_2026-05-04.md` |
+| Canonical filename | `Z3_omega_m_baseline_preregistration_v0_2_2026-05-04_839ce60.md` |
+| Predecessor draft filename | `Z3_omega_m_baseline_preregistration_v0_2_DRAFT_2026-05-04.md` (renamed at hash injection) |
 | Naming-policy authority | `feedback_artifact_hash_naming.md` |
-| Pending bookkeeping | Pre-canonical until committed and renamed with bootstrap commit hash. |
+| Bootstrap commit | `839ce60` (uha repo, 2026-05-04 10:26:53 PDT) — z-track: Z3 v0.1+v0.2 drafts, gap survey, Z-star, companion dialogue, perfex inserts |
+| Hash-injection commit | (to be appended at deposit-rename push) |
+| Status | Canonical, GATE:OPEN given 2026-05-04 17:42 UTC, depositing |
 
 **Standing artifact-hash-naming policy (inherited from Z0):** Every artifact carries its commit hash inside AND in filename. No hash, no canonical status. No exceptions.
 
