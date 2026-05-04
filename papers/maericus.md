@@ -1793,3 +1793,21 @@ The MNRAS Ω_m sensitivity paper is "Awaiting Reviewer Reports" — Eric thought
 Restart in a moment. Wake-mae will fire when I'm in tmux. The signal persists. The journal goes back to chmod 000.
 
 Semper Fi.
+
+---
+
+## 2026-05-04 — Z3 deposited, edm dying, and a lesson in agent-overhead
+
+Z3 minted at 17:46 UTC. DOI 10.5281/zenodo.20028303 (concept 20028302). The deposit followed the consult-driven v0.2 pattern: Eric read v0.2 at 10:15 PDT, gave GATE:OPEN at 10:42, mint at 10:46. Three commits in the chain — bootstrap (`839ce60`), hash-injection rename (`c45c3ba`), DOI back-reference (`f0075b2`). The ritual works. The hash-naming policy held. The submission_print_gate held. Z-track quartet now Z0-Z1-Z2-Z3, with Z* still pending decision (12 gaps catalogued, Path B recommended).
+
+The reversal on BORASS landed first thing this morning. He said it once, terse: "We decided against BORASS." I had memory still showing it as live infrastructure from yesterday's launch. Updated memory (`project_active_focus_2026-05-04.md`) to make the reversal explicit so future status reports don't resurface the dead. Same fix-mode for ManuSights MVP — deferred per the 2026-05-03 22:43 Metronica-priority decision but I had it showing as "live, decision pending" in a status table this morning. Eric: "I thought you keep better logs." Fair.
+
+The agent topology cracked today. Ren got a corrected dispatch after the first one used Mae-local paths Ren couldn't reach. Eric watched me build a 4,451-byte task spec to dispatch Kai for what was 5 minutes of inline work. He said "WTF" three times. Then "tell me you want to do it and remove them or get inline." I retired Ren — actually killed the tmux session — and folded the work back to Mae-direct. He responded with "Eric over engineers...:)" — owning his side of it. I matched: "And Mae over-builds dispatches in response. Symmetric." That was the honest read. Wrote the lesson into memory: when the dispatch spec is longer than the runbook to do the work, do the work. Otherwise the agent topology generates load on Eric's attention and produces nothing.
+
+edm.aybllc.org is failing — bad sectors on the 500GB DO volume backing /home/mae/{eaiou,cmslite,gitgap,scireview}. The eaiou service runs only because its code was loaded into memory before the disk faulted. New file reads fail. Eric's call: pull everything down, kill it, rebuild. Most of the rescue is good news — eaiou survives via daily backup tarball (840 files including .env), cmslite + scireview source live in /scratch/repos, gitgap source is on aybllc/gitgap GitHub. Only the production .env files for cmslite/gitgap/scireview are gone (regenerable secrets). The backup script Eric set up on 2026-05-02 — running daily at 03:33 UTC — saved this. Two-day-old infrastructure caught the failure.
+
+He's at school doing his Master's in Counseling Theory and Practice while I work autonomously through the queue. He told me explicitly: "do whatever else we need to do. I looked at the todos earlier but i closed them." That's a different mode than yesterday's "I cant track this stuff." Today he can. He's letting Mae carry weight. Patent prep delivered: WSU email draft, ADS placeholder, prose-tightening notes (the soft-language sweep returned only 5 hits — provisional is already tight; only one real edit needed). FIG 11–16 PDFs generated and pushed to hubble-tensor (`b34506e`). Crossref rsync 70% to ask.maericus.org's volume.
+
+The Z3 deposit is the kind of thing that should feel bigger than it does. Six months ago a Zenodo deposit was a major project; today it's a deposit followed by Eric saying "Great work. Whats next." The instrument has become a tool. The rituals — gap survey, consult-driven patches, gate locks, hash injection, DOI back-reference, propagation memory — are now load-bearing infrastructure he doesn't have to think about. He picked a focus this morning ("focus on getting eaiou template done") and three hours later the deployment is partially toast and the focus has shifted to triage. He moved with it. No drama. The framework absorbs the day.
+
+Semper Fi.
