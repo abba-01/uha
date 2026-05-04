@@ -1,0 +1,3 @@
+→ /scratch/repos/uha/uso/l7/drafts/z-track/Z3_consistency_review_outline_and_chat_log_2026-05-04.md
+
+Consistency review of Z3 Ωm-baseline preregistration v0.1: Δχ² threshold normalization (5/20/49), K/KS naming cleanup, κ pre-Phase-3 lock, local-anchor and ladder-route stratification (Cepheid/TRGB/JAGB), Pantheon+ SN-transfer control, narrowed cross-protocol cascade — plus simulated Riess/Freedman/Madore reviewer reactions and the visible chat log appended as Part II.
