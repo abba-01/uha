@@ -17,8 +17,10 @@
 | Predecessor draft filename | `Z3_omega_m_baseline_preregistration_v0_2_DRAFT_2026-05-04.md` (renamed at hash injection) |
 | Naming-policy authority | `feedback_artifact_hash_naming.md` |
 | Bootstrap commit | `839ce60` (uha repo, 2026-05-04 10:26:53 PDT) — z-track: Z3 v0.1+v0.2 drafts, gap survey, Z-star, companion dialogue, perfex inserts |
-| Hash-injection commit | (to be appended at deposit-rename push) |
-| Status | Canonical, GATE:OPEN given 2026-05-04 17:42 UTC, depositing |
+| Hash-injection commit | `c45c3ba` (uha repo, 2026-05-04 10:46 PDT) |
+| Zenodo DOI | `10.5281/zenodo.20028303` (concept `10.5281/zenodo.20028302`) — minted 2026-05-04 17:46 UTC |
+| Zenodo record | https://zenodo.org/record/20028303 |
+| Status | DEPOSITED, canonical Z3 |
 
 **Standing artifact-hash-naming policy (inherited from Z0):** Every artifact carries its commit hash inside AND in filename. No hash, no canonical status. No exceptions.
 
